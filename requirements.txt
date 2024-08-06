@@ -1,0 +1,5 @@
+web3
+loguru
+fake_useragent
+requests
+curl_cffi

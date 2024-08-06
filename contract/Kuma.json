@@ -1,0 +1,394 @@
+{
+    "name":"Kuma",
+    "address":"0x8504a242d86C7D84Fd11E564e6291f0A20d6C2a2",
+    "abi":[
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_kumaBondToken",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes16",
+                            "name": "cusip",
+                            "type": "bytes16"
+                        },
+                        {
+                            "internalType": "bytes16",
+                            "name": "isin",
+                            "type": "bytes16"
+                        },
+                        {
+                            "internalType": "bytes4",
+                            "name": "currency",
+                            "type": "bytes4"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "issuance",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "maturity",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "term",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "tncId",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "coupon",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "principal",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "issuer",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "riskCategory",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IKUMABondToken.Bond",
+                    "name": "AICKInfo",
+                    "type": "tuple"
+                }
+            ],
+            "name": "AICKInfoSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "kumaBondToken",
+                    "type": "address"
+                }
+            ],
+            "name": "KumaBondTokenSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes16",
+                            "name": "cusip",
+                            "type": "bytes16"
+                        },
+                        {
+                            "internalType": "bytes16",
+                            "name": "isin",
+                            "type": "bytes16"
+                        },
+                        {
+                            "internalType": "bytes4",
+                            "name": "currency",
+                            "type": "bytes4"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "issuance",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "maturity",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "term",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "tncId",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "coupon",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "principal",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "issuer",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "riskCategory",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IKUMABondToken.Bond",
+                    "name": "bond",
+                    "type": "tuple"
+                }
+            ],
+            "name": "Minted",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "AICK",
+            "outputs": [
+                {
+                    "internalType": "bytes16",
+                    "name": "cusip",
+                    "type": "bytes16"
+                },
+                {
+                    "internalType": "bytes16",
+                    "name": "isin",
+                    "type": "bytes16"
+                },
+                {
+                    "internalType": "bytes4",
+                    "name": "currency",
+                    "type": "bytes4"
+                },
+                {
+                    "internalType": "uint64",
+                    "name": "issuance",
+                    "type": "uint64"
+                },
+                {
+                    "internalType": "uint64",
+                    "name": "maturity",
+                    "type": "uint64"
+                },
+                {
+                    "internalType": "uint64",
+                    "name": "term",
+                    "type": "uint64"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "tncId",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "coupon",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "principal",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "issuer",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "riskCategory",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "kumaBondToken",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "mintAICK",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes16",
+                            "name": "cusip",
+                            "type": "bytes16"
+                        },
+                        {
+                            "internalType": "bytes16",
+                            "name": "isin",
+                            "type": "bytes16"
+                        },
+                        {
+                            "internalType": "bytes4",
+                            "name": "currency",
+                            "type": "bytes4"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "issuance",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "maturity",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "term",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "tncId",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "coupon",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "principal",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "issuer",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "riskCategory",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "internalType": "struct IKUMABondToken.Bond",
+                    "name": "_AICKInfo",
+                    "type": "tuple"
+                }
+            ],
+            "name": "setAICKInfo",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_kumaBondToken",
+                    "type": "address"
+                }
+            ],
+            "name": "setKumaBondToken",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ]
+}
