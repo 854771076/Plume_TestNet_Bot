@@ -1,0 +1,478 @@
+2024-08-06T15:02:14.644176+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:02:19.191847+0800 ERROR Error loading wallet: list indices must be integers or slices, not str
+2024-08-06T15:02:19.191847+0800 SUCCESS 初始化钱包成功-钱包数量：0
+2024-08-06T15:02:23.530028+0800 ERROR Error loading wallet: list indices must be integers or slices, not str
+2024-08-06T15:02:28.326916+0800 ERROR Error loading wallet: list indices must be integers or slices, not str
+2024-08-06T15:02:28.326916+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+暂无钱包，请创建...
+2024-08-06T15:03:27.498783+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:03:52.759207+0800 ERROR Error loading wallet: list indices must be integers or slices, not str
+2024-08-06T15:03:52.760206+0800 SUCCESS 初始化钱包成功-钱包数量：0
+2024-08-06T15:05:07.363213+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:05:11.464202+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:05:38.452016+0800 ERROR Error init wallet: {'code': -32000, 'message': 'nonce too low: address 0x72691a36ED1fAC3b197Fb42612Dc15a8958bf9f2, tx: 61 state: 62'}
+2024-08-06T15:05:42.784991+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10274, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:06:36.924216+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:06:41.008273+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:07:07.485352+0800 ERROR Error init wallet: {'code': -32000, 'message': 'nonce too low: address 0x72691a36ED1fAC3b197Fb42612Dc15a8958bf9f2, tx: 62 state: 63'}
+2024-08-06T15:07:11.588066+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10272, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:32:51.150839+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:32:55.263478+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:32:59.185152+0800 ERROR Error init wallet: Plume_TestNet_Bot.check_Kuma() missing 1 required positional argument: 'wallet'
+2024-08-06T15:33:03.551811+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10272, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:33:55.476615+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:33:59.558162+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:34:03.026964+0800 ERROR Error init wallet: 'str' object has no attribute 'lowwer'
+2024-08-06T15:34:06.947844+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10272, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:34:32.950042+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:34:37.103499+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:34:41.017261+0800 ERROR Error init wallet: 'NTFs'
+2024-08-06T15:34:44.692586+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10272, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:35:00.346235+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:35:04.664121+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:35:31.775454+0800 ERROR wallets\wallet-授权成功-ERROR：{'code': -32000, 'message': 'nonce too low: address 0x72691a36ED1fAC3b197Fb42612Dc15a8958bf9f2, tx: 63 state: 64'}
+2024-08-06T15:35:31.779455+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T15:35:31.783453+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T15:35:31.783453+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T15:35:36.142906+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10271, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:35:37.095191+0800 ERROR wallets\wallet-AICK swap成功失败-ERROR：('execution reverted', 'no data')
+2024-08-06T15:35:37.099193+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T15:39:47.667252+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:39:51.830009+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:39:55.762097+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T15:40:00.054097+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10271, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:40:00.055098+0800 INFO wallets\wallet-距离上次执行-swap_Kuma-还没有一天
+2024-08-06T15:40:25.497225+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:40:30.035961+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:40:33.547264+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T15:40:37.637040+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10271, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:46:22.684052+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:46:27.199340+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:46:30.698926+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T15:46:34.352674+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10271, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:48:23.066205+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:48:27.196588+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:48:31.192638+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T15:48:34.664413+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 285087, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10266, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:50:53.657463+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:50:57.727624+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:51:01.602301+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T15:51:05.741486+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.1026, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T15:58:58.955822+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T15:59:03.070565+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T15:59:07.185657+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T15:59:11.433722+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.1026, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:03:28.478117+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:03:32.596467+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:03:54.799254+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:04:13.389748+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:04:17.540838+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:04:21.401643+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T16:04:25.494476+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.1026, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:06:22.413695+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:06:26.594530+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:06:30.072082+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T16:06:33.949891+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.1026, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:08:48.967044+0800 SUCCESS wallets\wallet-Kuma mint成功-Transaction-交易哈希: 0xe943adcf5708a320ba588508e53f5077da0f63362874423c4b6ab2edac8e50df-交易状态: 1
+2024-08-06T16:08:48.969045+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T16:12:20.856479+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:12:25.359987+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:12:29.303298+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T16:12:32.780651+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10244, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:13:13.264028+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:13:17.373311+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:13:21.251047+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T16:13:25.145210+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10244, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:14:14.647021+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:14:18.812067+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:14:22.277337+0800 ERROR Error init wallet: cannot access local variable 'kuma' where it is not associated with a value
+2024-08-06T16:14:26.110747+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10244, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:14:38.117054+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:14:41.806269+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:14:45.279271+0800 ERROR Error init wallet: cannot access local variable 'kuma' where it is not associated with a value
+2024-08-06T16:14:49.163089+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10244, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:15:21.069839+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:15:24.763091+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:15:28.447951+0800 ERROR Error init wallet: Plume_TestNet_Bot.check_Kuma() missing 1 required positional argument: 'wallet'
+2024-08-06T16:15:32.289176+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10244, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:15:45.625963+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:15:49.794923+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:16:36.744151+0800 ERROR Error init wallet: wallets\wallet-授权成功-ERROR：{'code': -32000, 'message': 'intrinsic gas too low'}
+2024-08-06T16:16:40.833091+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10244, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:17:59.039493+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:18:03.151408+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:18:12.562587+0800 ERROR Error init wallet: wallets\wallet-授权失败-ERROR：Transaction had invalid fields: {'gas': 268822.4}
+2024-08-06T16:18:16.681222+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10244, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:18:48.333999+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:18:52.980986+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:19:56.757471+0800 ERROR Error init wallet: wallets\wallet-授权失败-ERROR：HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)
+2024-08-06T16:20:01.077323+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10242, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:20:51.148548+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:20:55.293101+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:23:06.841811+0800 SUCCESS wallets\wallet-授权成功-Transaction-交易哈希: 0x080621aa656318c1eefd44309f3c9824280085ff65bc93b8df0e2d2e0275cb81-交易状态: 1
+2024-08-06T16:23:06.843812+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T16:23:06.844812+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T16:23:06.845811+0800 SUCCESS wallets\wallet初始化成功
+2024-08-06T16:23:11.193143+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307094, 'amount': 5}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10236, 'AICK': 50029.67344, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:24:48.555694+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:24:52.675196+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:25:57.170642+0800 ERROR Error init wallet: wallets\wallet-授权失败-ERROR：{'code': -32000, 'message': 'nonce too low: address 0x72691a36ED1fAC3b197Fb42612Dc15a8958bf9f2, tx: 78 state: 79'}
+2024-08-06T16:26:01.569646+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307072, 'amount': 4}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10228, 'AICK': 100071.36775, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:30:43.096369+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:30:46.321605+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T16:31:37.454745+0800 ERROR Error init wallet: wallets\wallet-授权失败-ERROR：{'code': -32000, 'message': 'nonce too low: address 0x72691a36ED1fAC3b197Fb42612Dc15a8958bf9f2, tx: 81 state: 82'}
+2024-08-06T16:31:41.599938+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 307025, 'amount': 3}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.1022, 'AICK': 150107.05163, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-06T16:36:06.377099+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:36:10.487333+0800 SUCCESS 创建钱包成功-已保存到 wallets/wallet_2.json
+2024-08-06T16:37:14.439679+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:37:26.843824+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:37:26.847824+0800 SUCCESS 创建钱包成功-已保存到 wallets/wallet_1.json
+2024-08-06T16:37:29.581658+0800 ERROR Error loading wallet: 'items'
+2024-08-06T16:38:29.429361+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:38:29.434360+0800 SUCCESS 创建钱包成功-已保存到 wallets/wallet_1.json
+2024-08-06T16:38:58.286171+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T16:39:01.214140+0800 SUCCESS 创建钱包成功-已保存到 wallets/wallet_2.json
+2024-08-06T16:39:18.291041+0800 ERROR wallets\wallet_1:初始领水/签名异常，被反爬,resp:{"error":"Failed to send token"}
+2024-08-06T16:39:18.292042+0800 ERROR wallets\wallet_1:初始领水/签名异常,代理ip被使用,resp:{"error":"Failed to send token"}
+2024-08-06T16:39:38.423878+0800 WARNING 请求失败正在重试-115.229.201.66:64256：Failed to perform, curl: (56) Proxy CONNECT aborted. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2024-08-06T16:39:38.424877+0800 ERROR wallets\wallet_1:初始领水/签名异常，被反爬,resp:
+2024-08-06T16:39:38.425891+0800 ERROR wallets\wallet_1:初始领水/签名异常,代理ip被使用,resp:
+2024-08-06T16:40:02.447973+0800 ERROR wallets\wallet_1:初始领水/签名异常，被反爬,resp:<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>faucet.plumenetwork.xyz | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+              <span class="inline-block">Gateway time-out</span>
+              <span class="code-label">Error code 504</span>
+            </h1>
+            <div>
+               Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2024-08-06 08:40:00 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                  
+<div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Browser
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Hong Kong</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+    </a>
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">faucet.plumenetwork.xyz</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Host
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    <p class="mb-6">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+  <p class="text-13">
+    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">8aedb7d8cf9484cf</strong></span>
+    <span class="cf-footer-separator sm:hidden">&bull;</span>
+    <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+      Your IP:
+      <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+      <span class="hidden" id="cf-footer-ip">180.119.27.16</span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+    </span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+  <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+</div><!-- /.error-footer -->
+
+
+    </div>
+</div>
+</body>
+</html>
+
+2024-08-06T16:40:02.456644+0800 ERROR wallets\wallet_1:初始领水/签名异常,ERROR:Expecting value: line 1 column 1 (char 0)
+2024-08-06T16:40:02.456644+0800 ERROR wallets\wallet_1:初始领水/签名异常,代理ip被使用,resp:<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>faucet.plumenetwork.xyz | 504: Gateway time-out</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+              <span class="inline-block">Gateway time-out</span>
+              <span class="code-label">Error code 504</span>
+            </h1>
+            <div>
+               Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2024-08-06 08:40:00 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                  
+<div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Browser
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Hong Kong</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+    </a>
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">faucet.plumenetwork.xyz</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Host
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The web server reported a gateway time-out error.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    <p class="mb-6">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+  <p class="text-13">
+    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">8aedb7d8cf9484cf</strong></span>
+    <span class="cf-footer-separator sm:hidden">&bull;</span>
+    <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+      Your IP:
+      <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+      <span class="hidden" id="cf-footer-ip">180.119.27.16</span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+    </span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_504&utm_campaign=faucet.plumenetwork.xyz" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+  <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+</div><!-- /.error-footer -->
+
+
+    </div>
+</div>
+</body>
+</html>
+
+2024-08-06T16:40:18.257665+0800 WARNING 请求失败正在重试-180.119.27.231:64256：Failed to perform, curl: (23) Failed writing header. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2024-08-06T16:40:18.258269+0800 ERROR wallets\wallet_1:初始领水/签名异常，被反爬,resp:
+2024-08-06T16:40:18.258790+0800 ERROR wallets\wallet_1:初始领水/签名异常,代理ip被使用,resp:
+2024-08-06T16:40:21.905877+0800 WARNING 请求失败正在重试-49.70.32.191:64256：Failed to perform, curl: (23) Failed writing header. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2024-08-06T16:40:21.905877+0800 ERROR wallets\wallet_1:初始领水/签名异常，被反爬,resp:
+2024-08-06T16:40:21.906879+0800 ERROR wallets\wallet_1:初始领水/签名异常,代理ip被使用,resp:
+2024-08-06T17:13:40.755909+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-06T17:13:44.872333+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-06T17:14:29.055699+0800 SUCCESS wallets\wallet-授权成功-Transaction-交易哈希: 0x191dd0a8d2cf6c64e00eaee1fc2313854b79a4f3c09600bbcb1ffcaf63a4fb3a-交易状态: 1
+2024-08-06T17:14:29.057699+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T17:14:29.058699+0800 SUCCESS 钱包信息已更新 ../wallets\wallet.json
+2024-08-06T17:14:29.903300+0800 ERROR Error init wallet: pop from empty list
+2024-08-06T17:14:34.194594+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet    	2295750 	{'NMSS': {'id': 1221, 'amount': 1}, 'KUMA': {'id': 306991, 'amount': 2}, 'GOON': {'id': 996415, 'amount': 1}}	{'ETH': 0.10214, 'AICK': 200142.7355, 'gnUSD': 549.15437, 'sgnUSD': 351.28274, 'GOON': 3.3, 'tUSDC': 9953.83681, 'USDC': 889.9035}
+
+2024-08-07T10:40:49.625984+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T10:40:49.631013+0800 SUCCESS 创建钱包成功-已保存到 wallets/wallet_1.json

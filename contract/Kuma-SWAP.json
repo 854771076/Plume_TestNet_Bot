@@ -1,0 +1,1245 @@
+{
+    "name":"Kuma-SWAP",
+    "address":"0xA4E9ddAD862A1B8b5F8e3d75a3AAd4C158E0faaB",
+    "abi":[
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "role",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "ACCESS_CONTROL_ACCOUNT_IS_MISSING_ROLE",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "AMOUNT_CANNOT_BE_ZERO",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "BOND_ALREADY_EXPIRED",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "BOND_NOT_AVAILABLE_FOR_CLAIM",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "BOND_NOT_MATURED",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "BOND_RESERVE_NOT_EMPTY",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "BUYER_CANNOT_BE_ADDRESS_ZERO",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "CANNOT_SELL_MATURED_BOND",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "CANNOT_SET_TO_ADDRESS_ZERO",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "COUPON_TOLERANCE_TOO_HIGH",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "COUPON_TOO_LOW",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "DEPRECATION_MODE_ALREADY_INITIALIZED",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "DEPRECATION_MODE_ENABLED",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "DEPRECATION_MODE_NOT_ENABLED",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "DEPRECATION_MODE_NOT_INITIALIZED",
+            "type": "error"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "elapsed",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "minElapsedTime",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ELAPSED_TIME_SINCE_DEPRECATION_MODE_INITIALIZATION_TOO_SHORT",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "EXPIRED_BONDS_MUST_BE_BOUGHT_FIRST",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "INVALID_TOKEN_ID",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "MAX_COUPONS_REACHED",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "MCAG_RATE_FEED_NOT_SET",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "ORACLE_NOT_SET",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "WRONG_RISK_CATEGORY",
+            "type": "error"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "previousAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminChanged",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "beacon",
+                    "type": "address"
+                }
+            ],
+            "name": "BeaconUpgraded",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "KIBTokenBurned",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "buyer",
+                    "type": "address"
+                }
+            ],
+            "name": "BondBought",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cloneTokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BondClaimed",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BondExpired",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "KIBTokenMinted",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "seller",
+                    "type": "address"
+                }
+            ],
+            "name": "BondSold",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldTolerance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newTolerance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CouponToleranceSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [],
+            "name": "DeprecationModeEnabled",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [],
+            "name": "DeprecationModeInitialized",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [],
+            "name": "DeprecationModeUninitialized",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldDeprecationStableCoin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newDeprecationStableCoin",
+                    "type": "address"
+                }
+            ],
+            "name": "DeprecationStableCoinSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FeeCharged",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "variableFee",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fixedFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FeeSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "version",
+                    "type": "uint8"
+                }
+            ],
+            "name": "Initialized",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "redeemer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "redeemedStableCoinAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "KIBTRedeemed",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "KUMAAddressProvider",
+                    "type": "address"
+                }
+            ],
+            "name": "KUMAAddressProviderSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldMaxCouponTolerance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maxCouponTolerance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MaxCouponToleranceSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldMinCoupon",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newMinCoupon",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MinCouponUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Paused",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldPlumeCheckIn",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPlumeCheckIn",
+                    "type": "address"
+                }
+            ],
+            "name": "PlumeCheckInSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldTaskId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newTaskId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PlumeTaskIdSet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "riskCategory",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "RiskCategorySet",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TaskPointsIncremented",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "implementation",
+                    "type": "address"
+                }
+            ],
+            "name": "Upgraded",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "DEPRECATION_MODE_TIMELOCK",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "MAX_COUPONS",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "MIN_ALLOWED_COUPON",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "buyBond",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "buyBondForStableCoin",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "claimBond",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "enableDeprecationMode",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "expireBond",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getBondBaseValue",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getBondReserve",
+            "outputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getBondValue",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getCloneBond",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "coupon",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getCouponInventory",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getCouponTolerance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getCoupons",
+            "outputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getDeprecationInitializedAt",
+            "outputs": [
+                {
+                    "internalType": "uint72",
+                    "name": "",
+                    "type": "uint72"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getDeprecationStableCoin",
+            "outputs": [
+                {
+                    "internalType": "contract IERC20",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getExpiredBonds",
+            "outputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getFixedFee",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getKUMAAddressProvider",
+            "outputs": [
+                {
+                    "internalType": "contract IKUMAAddressProvider",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getMaxCouponTolerance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getMinCoupon",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getPlumeCheckIn",
+            "outputs": [
+                {
+                    "internalType": "contract IPlumeCheckIn",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getPlumeTaskId",
+            "outputs": [
+                {
+                    "internalType": "uint8",
+                    "name": "",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getRiskCategory",
+            "outputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getVariableFee",
+            "outputs": [
+                {
+                    "internalType": "uint16",
+                    "name": "",
+                    "type": "uint16"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IKUMAAddressProvider",
+                    "name": "KUMAAddressProvider",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IERC20",
+                    "name": "deprecationStableCoin",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes4",
+                    "name": "currency",
+                    "type": "bytes4"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "issuer",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "term",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "maxCouponTolerance",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "couponTolerance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "initialize",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "initializeDeprecationMode",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "isDeprecated",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "isDeprecationInitialized",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "isExpired",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "isInReserve",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "isTaskPointsIncremented",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "",
+                    "type": "bytes"
+                }
+            ],
+            "name": "onERC721Received",
+            "outputs": [
+                {
+                    "internalType": "bytes4",
+                    "name": "",
+                    "type": "bytes4"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "pause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "paused",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "proxiableUUID",
+            "outputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "redeemKIBT",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sellBond",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "couponTolerance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setCouponTolerance",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IERC20",
+                    "name": "newDeprecationStableCoin",
+                    "type": "address"
+                }
+            ],
+            "name": "setDeprecationStableCoin",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint16",
+                    "name": "variableFee",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "fixedFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setFees",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "maxCouponTolerance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setMaxCouponTolerance",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IPlumeCheckIn",
+                    "name": "newPlumeCheckIn",
+                    "type": "address"
+                }
+            ],
+            "name": "setPlumeCheckIn",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint8",
+                    "name": "newTaskId",
+                    "type": "uint8"
+                }
+            ],
+            "name": "setPlumeTaskId",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "uninitializeDeprecationMode",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "unpause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newImplementation",
+                    "type": "address"
+                }
+            ],
+            "name": "upgradeTo",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newImplementation",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "upgradeToAndCall",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        }
+    ]
+}

@@ -72,7 +72,7 @@ class Plume_TestNet_Bot:
             'sec-ch-ua-platform': '"Windows"',
         }
     _lock=threading.Lock()
-    def __init__(self,invited='RRU30',init=True,show_point=True,wallet_path='./wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
+    def __init__(self,invited='RRU30',init=True,show_point=True,wallet_path='../wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
         self.proxy_api=proxy_api
         self.rpc_url=rpc_url
         self.wallet_path=wallet_path
@@ -106,20 +106,32 @@ class Plume_TestNet_Bot:
         # 打印签名的消息
         return signed_message.signature.hex()
     def check_balance(self,address):
-
-        # 获取账户余额（单位是 Wei）
-        balance={}
-        balance_wei = self.web3.eth.get_balance(address)
-        # 将余额从 Wei 转换为 Ether
-        balance_ether = self.web3.from_wei(balance_wei, 'ether')
-        balance['ETH']=round(float(balance_ether),5)
-        response = requests.get(f'https://plume-testnet.explorer.caldera.xyz/api/v2/addresses/{address}/tokens', params={
-            'type': 'ERC-20',
-        }, headers=self.headers)
-        data=response.json()['items']
-        for token in data:
-            balance[token['token']['symbol']]=round(int(token['value'])/(10**int(token['token']['decimals'])),5)
-
+        try:
+            # 获取账户余额（单位是 Wei）
+            balance={}
+            balance_wei = self.web3.eth.get_balance(address)
+            # 将余额从 Wei 转换为 Ether
+            balance_ether = self.web3.from_wei(balance_wei, 'ether')
+            balance['ETH']=round(float(balance_ether),5)
+            response = requests.get(f'https://plume-testnet.explorer.caldera.xyz/api/v2/addresses/{address}/tokens', params={
+                'type': 'ERC-20',
+            }, headers=self.headers)
+            data=response.json()['items']
+            for token in data:
+                balance[token['token']['symbol']]=round(int(token['value'])/(10**int(token['token']['decimals'])),5)
+        except:
+            pass
+        return balance
+    def get_NFTs(self,address):
+        try:
+            # 获取账户余额（单位是 Wei）
+            balance={}
+            response = requests.get(f'https://plume-testnet.explorer.caldera.xyz/api/v2/addresses/{address}/nft/collections', params={'type':''}, headers=self.headers)
+            data=response.json()['items']
+            for token in data:
+                balance[token['token']['symbol']]={'id':int(token['token_instances'][0]['id']),'amount':int(token['amount'])}
+        except:
+            pass
         return balance
     def generate_and_save_wallet(self,filename):
         # 生成新账户
@@ -145,6 +157,7 @@ class Plume_TestNet_Bot:
         wallet_name=filename.split('/')[-1].replace('.json','')
         wallet_info['name']=wallet_name
         wallet_info['balance']=self.check_balance(wallet_info['address'])
+        wallet_info['NFTs']=self.get_NFTs(wallet_info['address'])
         wallet_info['init']=bool(wallet_info['balance']['ETH']>0)
         wallet_info['filename']=filename
         
@@ -212,7 +225,10 @@ class Plume_TestNet_Bot:
         with self._lock:
             if not self.ip_pool:
                 self.ip_pool=requests.get(f"{self.proxy_api}").json().get('data',[{}])
-            data=self.ip_pool.pop()
+            try:
+                data=self.ip_pool.pop()
+            except:
+                logger.error('本地ip，未有代理服务白名单，请更换代理或者开通白名单')
             proxy={'proxy':f'{data["ip"]}:{data["port"]}'}
             return proxy
     # def delete_proxy(self,proxy):
@@ -296,56 +312,59 @@ class Plume_TestNet_Bot:
             ValueError('gas不足改日领水后重试')
         # 返回估算的 gas
         return gas_estimate
+    def run_contract(self, func, wallet):
+        with self._lock:
+            try:
+                gas_limit = self.get_contract_transaction_gas_limit(func, wallet['address'])
+                nonce=self.web3.eth.get_transaction_count(wallet['address'])
+                transaction = func.build_transaction({
+                    'chainId': self.chain_id,
+                    'gas': int(gas_limit*1.1),
+                    'gasPrice': int(self.web3.eth.gas_price * 1.2),
+                    'nonce': nonce
+                })
+                signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=wallet['private_key'])
+                # 确保网络已准备好接收
+                tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
+                # 等待交易被挖矿
+                status = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+                return tx_hash, status
+            except Exception as e:
+                if 'nonce too low' in str(e):
+                    gas_limit = self.get_contract_transaction_gas_limit(func, wallet['address'])
+                    transaction = func.build_transaction({
+                        'chainId': self.chain_id,
+                        'gas': int(gas_limit*1.1),
+                        'gasPrice': int(self.web3.eth.gas_price * 1.2),
+                        'nonce': nonce+1
+                    })
+                    signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=wallet['private_key'])
+                    # 确保网络已准备好接收
+                    tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
+                    # 等待交易被挖矿
+                    status = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+                    return tx_hash, status
+                else:
+                    raise e
+            
+                
     def approve(self,wallet,spender='0x4c722a53cf9eb5373c655e1dd2da95acc10152d1',value=100000,token='GOON',NFT=False,tokenId=287085):
         name=wallet['name']
-        address=wallet['address']
-        private_key=wallet['private_key']
         token_contract=self.contracts[token]
         spender=self.web3.to_checksum_address(spender)
-        if NFT:
-            gas_limit=self.get_contract_transaction_gas_limit(token_contract.functions.approve(spender,tokenId),address)
-            with self._lock:
-                transaction =token_contract.functions.approve(
-                    spender,tokenId
-                ).build_transaction(
-                    {
-                    'chainId': self.chain_id,  # 主网的链 ID，测试网可能不同
-                    'gas': gas_limit,  # Gas 限额
-                    'gasPrice': int(self.web3.eth.gas_price*1.2),  # Gas 价格
-                    'nonce': self.web3.eth.get_transaction_count(address),  # 获取 nonce
-                }
-                )
-                # 签署交易
-                signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=private_key)
-                # 等待交易被挖矿
-                # 发送已签署的交易
-                tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-        else:
-            decimals = token_contract.functions.decimals().call()
-            value=int(value * (10 ** decimals))
-            gas_limit=self.get_contract_transaction_gas_limit(token_contract.functions.approve(spender,value),address)
-            with self._lock:
-                transaction =token_contract.functions.approve(
-                    spender,value
-                ).build_transaction(
-                    {
-                    'chainId': self.chain_id,  # 主网的链 ID，测试网可能不同
-                    'gas': gas_limit,  # Gas 限额
-                    'gasPrice': int(self.web3.eth.gas_price*1.2),  # Gas 价格
-                    'nonce': self.web3.eth.get_transaction_count(address),  # 获取 nonce
-                }
-                )
-                # 签署交易
-                signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=private_key)
-                # 等待交易被挖矿
-                # 发送已签署的交易
-                tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-        # 等待交易被挖矿
         try:
-            receipt = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+            if NFT:
+                func=token_contract.functions.approve(spender,tokenId)
+                tx_hash,receipt=self.run_contract(func,wallet)
+                
+            else:
+                decimals = token_contract.functions.decimals().call()
+                value=int(value * (10 ** decimals))
+                func=token_contract.functions.approve(spender,value)
+                tx_hash,receipt=self.run_contract(func,wallet)
             logger.success(f'{name}-授权成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
-            logger.error(f'{name}-授权成功-ERROR：{e}')
+            raise ValueError(f'{name}-授权失败-ERROR：{e}')
     @ckeck_one_day
     def swap(self,wallet,base='gnUSD',quote:str='GOON',amount_in_base_currency=0.1,pool_idx = 36000,limit_price=65537,is_buy = False,in_base_qty = False,tip=0,reserve_flags = 0):
         if reserve_flags==0:
@@ -356,8 +375,6 @@ class Plume_TestNet_Bot:
                 amount_in_base_currency=0.9*wallet['balance'][base]
         
         name=wallet['name']
-        address=wallet['address']
-        private_key=wallet['private_key']
         base_contract=self.contracts[base]
         quote_contract=self.contracts[quote]
         swap_contract=self.contracts['swap']
@@ -369,26 +386,9 @@ class Plume_TestNet_Bot:
         # 根据代币精度调整交易数量
         qty = int(amount_in_base_currency * (10 ** base_decimals))
         min_out = int(0.98 * (10 ** quote_decimals))  # 最小输出
-        gas_limit=self.get_contract_transaction_gas_limit(swap_contract.functions.swap(base, quote, pool_idx, is_buy, in_base_qty, qty, tip, limit_price, min_out, reserve_flags),address)
-        with self._lock:
-            transaction =swap_contract.functions.swap(
-                base, quote, pool_idx, is_buy, in_base_qty, qty, tip, limit_price, min_out, reserve_flags
-            ).build_transaction(
-                {
-                'chainId': self.chain_id,  # 主网的链 ID，测试网可能不同
-                'gas': gas_limit,  # Gas 限额
-                'gasPrice': int(self.web3.eth.gas_price*1.2),  # Gas 价格
-                'nonce': self.web3.eth.get_transaction_count(address),  # 获取 nonce
-            }
-            )
-            # 签署交易
-            signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=private_key)
-            # 等待交易被挖矿
-            # 发送已签署的交易
-            tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-        # 等待交易被挖矿
         try:
-            receipt = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+            func=swap_contract.functions.swap(base, quote, pool_idx, is_buy, in_base_qty, qty, tip, limit_price, min_out, reserve_flags)
+            tx_hash,receipt = self.run_contract(func,wallet)
             logger.success(f'{name}-交换成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
             logger.error(f'{name}交换失败-ERROR：{e}')
@@ -397,28 +397,12 @@ class Plume_TestNet_Bot:
         checkin_func=self.contracts['checkin'].functions.checkIn()
         # 构建交易
         name=wallet['name']
-        address=wallet['address']
-        private_key=wallet['private_key']
-        gas_limit=self.get_contract_transaction_gas_limit(checkin_func,address)
-        with self._lock:
-            transaction = checkin_func.build_transaction({
-                'chainId': self.chain_id,  # 主网的链 ID，测试网可能不同
-                'gas': gas_limit,  # Gas 限额
-                'gasPrice': int(self.web3.eth.gas_price*1.2),  # Gas 价格
-                'nonce': self.web3.eth.get_transaction_count(address),  # 获取 nonce
-            })
-            # 签署交易
-            signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=private_key)
-            # 等待交易被挖矿
-            # 发送已签署的交易
-            tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-        # 等待交易被挖矿
         try:
-            receipt = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+            tx_hash,receipt = self.run_contract(checkin_func,wallet)
             logger.success(f'{name}签到成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
             wallet['checkin_time']=time.time()
         except Exception as e:
-            logger.error(f'{name}签到失败-ERROR：{e}')
+            raise ValueError(f'{name}签到失败-ERROR：{e}')
     def login(self,wallet):
         '''
         登录官网
@@ -457,71 +441,43 @@ class Plume_TestNet_Bot:
         faucet_func=self.contracts['faucet'].functions.getToken(token, salt, signature)
         # 构建交易
         name=wallet['name']
-        address=wallet['address']
-        private_key=wallet['private_key']
-
-        gas_limit=self.get_contract_transaction_gas_limit(faucet_func,address)
-        with self._lock:
-            # 构建交易
-            transaction = self.contracts['faucet'].functions.getToken(token, salt, signature).build_transaction({
-                'chainId': self.chain_id,  # 主网的链 ID，测试网可能不同
-                'gas': gas_limit,  # Gas 限额
-                'gasPrice': int(self.web3.eth.gas_price*1.2),  # Gas 价格
-                'nonce': self.web3.eth.get_transaction_count(address),  # 获取 nonce
-            })
-            # 签署交易
-            signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=private_key)
-            # 等待交易被挖矿
-            # 发送已签署的交易
-            tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-            # 等待交易被挖矿
         try:
-            receipt = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+            tx_hash,receipt = self.run_contract(faucet_func,wallet)
             logger.success(f'{name}领水成功-{token}-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
-            logger.error(f'{name}领水失败-{token}-ERROR：{e}')
+            raise ValueError(f'{name}领水失败-{token}-ERROR：{e}')
     def show_inited_account(self):
-        print_str=f'\n{"index":<3}\t{"name":<10}\t{"balance":<80}\t{"points":<8}\n'
+        print_str=f'\n{"index":<3}\t{"name":<10}\t{"points":<8}\t{"NFT":<30}\t{"balance":<80}\n'
         for wallet in self.wallets:
             name=wallet['name'].split('\\')[-1].replace('.json','')
-            print_str+=f"{self.wallets.index(wallet):<3}\t{name:<10}\t{str(wallet.get('balance')):<80}\t{wallet.get('user',{}).get('totalPoints',0):<8}\n"
+            print_str+=f"{self.wallets.index(wallet):<3}\t{name:<10}\t{wallet.get('user',{}).get('totalPoints',0):<8}\t{str(wallet.get('NFTs')):<30}\t{str(wallet.get('balance')):<80}\n"
         if not self.wallets:
             print_str+='暂无钱包，请创建...'
         logger.success(print_str)
     @ckeck_one_day
     def stake(self,wallet,value=50):
         name=wallet['name']
-        address=wallet['address']
-        private_key=wallet['private_key']
-        
         stake_contract=self.contracts['stake']
         gnUSD_decimals = self.contracts['gnUSD'].functions.decimals().call()
         # 根据代币精度调整交易数量
         value = int(value * (10 ** gnUSD_decimals))
-        gas_limit=self.get_contract_transaction_gas_limit(stake_contract.functions.stake(value),address)
-        with self._lock:
-            transaction =stake_contract.functions.stake(value).build_transaction(
-                {
-                'chainId': self.chain_id,  # 主网的链 ID，测试网可能不同
-                'gas': gas_limit,  # Gas 限额
-                'gasPrice': int(self.web3.eth.gas_price*1.2),  # Gas 价格
-                'nonce': self.web3.eth.get_transaction_count(address),  # 获取 nonce
-            }
-            )
-            # 签署交易
-            signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=private_key)
-            # 等待交易被挖矿
-            # 发送已签署的交易
-            tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-            # 等待交易被挖矿
+        func=stake_contract.functions.stake(value)
         try:
-            receipt = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+            tx_hash,receipt = self.run_contract(func,wallet)           
             logger.success(f'{name}-质押成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
-            logger.error(f'{name}-质押失败-ERROR：{e}')
+            raise ValueError(f'{name}-质押失败-ERROR：{e}')
+    def check_Kuma(self,wallet):
+        NTFS=self.get_NFTs(wallet['address'])
+        kuma_ID=[]
+        for key in NTFS.keys():
+            if 'kuma' in key.lower():
+                kuma_ID.append(wallet['NFTs'][key]['id'])
+        assert kuma_ID,'没有找到Kuma NFT'
+        return kuma_ID
+
     def init_account(self,wallet:dict):
-        name=wallet['name']
-            
+        name=wallet['name'] 
         if not wallet.get('init_approve'):
             self.get_faucet_sign(wallet,'ETH')
             self.get_wallets()
@@ -529,31 +485,32 @@ class Plume_TestNet_Bot:
             self.approve(wallet,spender='0xA34420e04DE6B34F8680EE87740B379103DC69f6',token='gnUSD')
             wallet['init_approve']=True
             self.update_wallet(wallet=wallet)
-        if not wallet.get('init_AICK'):
-            self.approve(wallet,spender='0xa4e9ddad862a1b8b5f8e3d75a3aad4c158e0faab',token='Kuma-AICK',NFT=True,tokenId=285087)
+        kuma=self.check_Kuma(wallet)
+        init=[]
+        if kuma:
+            for Id in kuma:
+                if Id not in wallet.get('kuma_ntf_init_list',[]):
+                    self.approve(wallet,spender='0xa4e9ddad862a1b8b5f8e3d75a3aad4c158e0faab',token='Kuma-AICK',NFT=True,tokenId=Id)
+                    init.append(Id)
+            new=wallet.get('kuma_ntf_init_list',[])+init
+            wallet['kuma_ntf_init_list']=new
+            self.update_wallet(wallet)
+        wallet['init_AICK']=True
+        self.update_wallet(wallet=wallet)
         if self.show_point:
-            self.login(wallet)
-        
-
-        
+            self.login(wallet)    
         logger.success(f'{name}初始化成功')
     def daily_task(self,wallet):
         try:
             self.checkin(wallet=wallet)
-        except ValueError as e:
-            raise e
         except Exception as e:
             logger.warning(f"{wallet.get('name')}-当日已签到或错误-{e}")
         try:
             self.get_faucet(wallet=wallet,token='ETH')
-        except ValueError as e:
-            raise e
         except Exception as e:
             logger.warning(f"{wallet.get('name')}-当日已领水ETH或错误-{e}") 
         try:
             self.get_faucet(wallet=wallet,token='GOON')
-        except ValueError as e:
-            raise e
         except Exception as e:
             logger.warning(f"{wallet.get('name')}-当日已领水GOON或错误-{e}") 
 
@@ -562,8 +519,6 @@ class Plume_TestNet_Bot:
             try:
                 self.swap(wallet=wallet)
                 break
-            except ValueError as e:
-                raise e
             except Exception as e:
                 logger.warning(f"{wallet.get('name')}-swap失败，等待重试-{e}")
                 time.sleep(60*2)
@@ -574,40 +529,45 @@ class Plume_TestNet_Bot:
             try:
                 self.stake(wallet=wallet)
                 break
-            except ValueError as e:
-                raise e
             except Exception as e:
                 logger.warning(f"{wallet.get('name')}-stake失败，等待重试-{e}")
                 time.sleep(60*2)
             finally:
                 count-=1
+        count=5
+        while count>0:
+            try:
+                self.mint_Kuma(wallet=wallet)
+            except Exception as e:
+                logger.warning(f"{e}")
+        count=5
+        while count>0:
+            try:
+                self.swap_Kuma(wallet=wallet)
+            except Exception as e:
+                logger.warning(f"{e}")
+        
     @ckeck_one_day
-    def mint_AICK(self,wallet):
+    def mint_Kuma(self,wallet):
         name=wallet['name']
-        address=wallet['address']
-        private_key=wallet['private_key']
         aick_contract=self.contracts['Kuma']
-        gas_limit=self.get_contract_transaction_gas_limit(aick_contract.functions.mintAICK(),address)
-        with self._lock:
-            transaction =aick_contract.functions.mintAICK().build_transaction(
-                {
-                'chainId': self.chain_id,  # 主网的链 ID，测试网可能不同
-                'gas': gas_limit,  # Gas 限额
-                'gasPrice': int(self.web3.eth.gas_price*1.2),  # Gas 价格
-                'nonce': self.web3.eth.get_transaction_count(address),  # 获取 nonce
-            }
-            )
-            # 签署交易
-            signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=private_key)
-            # 等待交易被挖矿
-            # 发送已签署的交易
-            tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-            # 等待交易被挖矿
+        func=aick_contract.functions.mintAICK()
         try:
-            receipt = self.web3.eth.wait_for_transaction_receipt(tx_hash)
-            logger.success(f'{name}-AICK mint成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
+            tx_hash,receipt = self.run_contract(func,wallet)            
+            logger.success(f'{name}-Kuma mint成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
-            logger.error(f'{name}-AICK mint失败-ERROR：{e}')
+            raise ValueError(f'{name}-Kuma mint失败-ERROR：{e}')
+    @ckeck_one_day
+    def swap_Kuma(self,wallet):
+        name=wallet['name']
+        aick_contract=self.contracts['Kuma-SWAP']
+        try:
+            tokenId=self.check_Kuma(wallet).pop()
+            func=aick_contract.functions.sellBond(tokenId)
+            tx_hash,receipt = self.run_contract(func,wallet)            
+            logger.success(f'{name}-AICK swap成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
+        except Exception as e:
+            raise ValueError(f'{name}-AICK swap失败-ERROR：{e}')
     def init_accounts(self,max_workers=10):
         self.get_wallets()
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -628,13 +588,13 @@ class Plume_TestNet_Bot:
                     data = future.result()
                 except Exception as e:
                     logger.error(f"Error daily_task wallet: {e}")
-                    # taceback.print_ex()
         
         self.get_wallets()
         self.show_inited_account()
 if __name__=='__main__':      
     bot=Plume_TestNet_Bot(show_point=False)
-    # bot.mint_AICK(wallet=bot.wallets[0])
+    # bot.mint_Kuma(wallet=bot.wallets[0])
+    bot.swap_Kuma(wallet=bot.wallets[0])
     # bot.create_wallets(1)
     # bot.do_daily_tasks(max_workers=10)
     # bot.swap(bot.wallets[0])
