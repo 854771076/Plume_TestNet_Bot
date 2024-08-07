@@ -484,18 +484,7 @@ class Plume_TestNet_Bot:
             self.approve(wallet,spender='0xA34420e04DE6B34F8680EE87740B379103DC69f6',token='gnUSD')
             wallet['init_approve']=True
             self.update_wallet(wallet=wallet)
-        kuma=self.check_Kuma(wallet)
-        init=[]
-        if kuma:
-            for Id in kuma:
-                if Id not in wallet.get('kuma_ntf_init_list',[]):
-                    self.approve(wallet,spender='0xa4e9ddad862a1b8b5f8e3d75a3aad4c158e0faab',token='Kuma-AICK',NFT=True,tokenId=Id)
-                    init.append(Id)
-            new=wallet.get('kuma_ntf_init_list',[])+init
-            wallet['kuma_ntf_init_list']=new
-            self.update_wallet(wallet)
-        wallet['init_AICK']=True
-        self.update_wallet(wallet=wallet)
+        
         if self.show_point:
             self.login(wallet)    
         logger.success(f'{name}初始化成功')
@@ -554,6 +543,17 @@ class Plume_TestNet_Bot:
         try:
             tx_hash,receipt = self.run_contract(func,wallet)            
             logger.success(f'{name}-Kuma mint成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
+            kuma=self.check_Kuma(wallet)
+            # 授权
+            init=[]
+            if kuma:
+                for Id in kuma:
+                    if Id not in wallet.get('kuma_ntf_init_list',[]):
+                        self.approve(wallet,spender='0xa4e9ddad862a1b8b5f8e3d75a3aad4c158e0faab',token='Kuma-AICK',NFT=True,tokenId=Id)
+                        init.append(Id)
+                new=wallet.get('kuma_ntf_init_list',[])+init
+                wallet['kuma_ntf_init_list']=new
+                self.update_wallet(wallet)
         except Exception as e:
             raise ValueError(f'{name}-Kuma mint失败-ERROR：{e}')
     @ckeck_one_day
@@ -593,7 +593,7 @@ class Plume_TestNet_Bot:
 if __name__=='__main__':      
     bot=Plume_TestNet_Bot(show_point=False)
     # bot.mint_Kuma(wallet=bot.wallets[0])
-    bot.swap_Kuma(wallet=bot.wallets[0])
+    # bot.swap_Kuma(wallet=bot.wallets[0])
     # bot.create_wallets(1)
     # bot.do_daily_tasks(max_workers=10)
     # bot.swap(bot.wallets[0])
