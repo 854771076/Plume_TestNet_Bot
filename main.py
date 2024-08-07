@@ -473,7 +473,6 @@ class Plume_TestNet_Bot:
         for key in NTFS.keys():
             if 'kuma' in key.lower():
                 kuma_ID.append(wallet['NFTs'][key]['id'])
-        assert kuma_ID,'没有找到Kuma NFT'
         return kuma_ID
 
     def init_account(self,wallet:dict):
