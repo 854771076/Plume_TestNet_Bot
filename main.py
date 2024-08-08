@@ -521,18 +521,15 @@ class Plume_TestNet_Bot:
                 time.sleep(60*2)
             finally:
                 count-=1
-        count=5
-        while count>0:
-            try:
-                self.mint_Kuma(wallet=wallet)
-            except Exception as e:
-                logger.warning(f"{e}")
-        count=5
-        while count>0:
-            try:
-                self.swap_Kuma(wallet=wallet)
-            except Exception as e:
-                logger.warning(f"{e}")
+        try:
+            self.mint_Kuma(wallet=wallet)
+        except Exception as e:
+            logger.warning(f"{e}")
+
+        try:
+            self.swap_Kuma(wallet=wallet)
+        except Exception as e:
+            logger.warning(f"{e}")
         
     @ckeck_one_day
     def mint_Kuma(self,wallet):
@@ -590,9 +587,9 @@ class Plume_TestNet_Bot:
         self.get_wallets()
         self.show_inited_account()
 if __name__=='__main__':      
-    bot=Plume_TestNet_Bot(show_point=False)
+    bot=Plume_TestNet_Bot(show_point=True)
     # bot.mint_Kuma(wallet=bot.wallets[0])
     # bot.swap_Kuma(wallet=bot.wallets[0])
     # bot.create_wallets(1)
-    bot.do_daily_tasks(max_workers=10)
+    bot.do_daily_tasks(max_workers=1)
     # bot.swap(bot.wallets[0])
