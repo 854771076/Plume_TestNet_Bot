@@ -77,7 +77,7 @@ class Plume_TestNet_Bot:
         self.rpc_url=rpc_url
         self.wallet_path=wallet_path
         self.contract_path=contract_path
-        self.web3 = Web3(Web3.HTTPProvider(rpc_url,timeout=120))
+        self.web3 = Web3(Web3.HTTPProvider(rpc_url))
         self.show_point=show_point
         self.invited=invited
         self.ip_pool=[]
