@@ -14,7 +14,7 @@ trigger = CronTrigger(hour=0, minute=30)
 
 # 添加任务到调度器
 scheduler.add_job(bot.do_daily_tasks, trigger)
-
+bot.do_daily_tasks()
 # 启动调度器
 scheduler.start()
 

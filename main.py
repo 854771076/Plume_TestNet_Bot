@@ -338,7 +338,7 @@ class Plume_TestNet_Bot:
                 return tx_hash, status
             except Exception as e:
                 if 'nonce too low' in str(e):
-                    return tx_hash,True
+                    return self.run_contract(self, func, wallet)
                 raise ValueError(f"Error in running contract function: {e}")
                 
             
@@ -389,7 +389,7 @@ class Plume_TestNet_Bot:
             logger.success(f'{name}-交换成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
             raise ValueError(f'{name}交换失败-ERROR：{e}')
-    @ckeck_one_day
+    # @ckeck_one_day
     def checkin(self,wallet:dict):
         checkin_func=self.contracts['checkin'].functions.checkIn()
         # 构建交易
@@ -427,7 +427,7 @@ class Plume_TestNet_Bot:
                 break
             else:
                 logger.error(f'{name}-登录失败,重新登录中-ERROR：{data}')
-    @ckeck_one_day
+    # @ckeck_one_day
     def get_faucet(self,wallet:dict,token='ETH'):
         assert token in ('GOON','ETH')
         data=self.get_faucet_sign(wallet=wallet,token=token)
@@ -531,7 +531,7 @@ class Plume_TestNet_Bot:
         except Exception as e:
             logger.warning(f"{e}")
         
-    @ckeck_one_day
+    # @ckeck_one_day
     def mint_Kuma(self,wallet):
         name=wallet['name']
         aick_contract=self.contracts['Kuma']
@@ -552,7 +552,7 @@ class Plume_TestNet_Bot:
                 self.update_wallet(wallet)
         except Exception as e:
             raise ValueError(f'{name}-Kuma mint失败-ERROR：{e}')
-    @ckeck_one_day
+    # @ckeck_one_day
     def swap_Kuma(self,wallet):
         name=wallet['name']
         aick_contract=self.contracts['Kuma-SWAP']
