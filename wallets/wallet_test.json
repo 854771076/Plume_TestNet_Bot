@@ -1,0 +1,164 @@
+{
+    "address": "0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D",
+    "private_key": "0xa9e43dcddb7836e2f869219cfc85b064a024bb3c0af6247e6696d5779a720e27",
+    "name": "wallets\\wallet_1",
+    "balance": {
+        "ETH": 0.00159,
+        "sgnUSD": 150.0,
+        "gnUSD": 149.70971,
+        "GOON": 0.7
+    },
+    "NFTs": {},
+    "init": true,
+    "filename": "./wallets\\wallet_1.json",
+    "init_approve": true,
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjMwMDE0NTcsImV4cCI6MTcyNTU5MzQ1NywiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiZTM0ZWQ4Y2MtMDY4MC00YWQyLTg1NDQtZThkMjI5ZTYxNmUxIn0.1k6ewpiIX6gtjz2pSvVadApndLBAcxMvUprUzfwGLvY",
+    "user": {
+        "id": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
+        "walletAddress": "0x6e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d",
+        "username": null,
+        "twitterHandle": null,
+        "discordUserId": null,
+        "discordUserName": null,
+        "discordRoles": null,
+        "previousPoints": "0",
+        "referralCode": "PLUME-861RK",
+        "hasTweetedAboutRWAs": false,
+        "hasEarlyAccess": false,
+        "hasVerifiedInviteCode": true,
+        "canMintRareNFTs": false,
+        "boardingGroup": null,
+        "flightClass": "Economy",
+        "onChainPoints": "5000",
+        "bonusPoints": "0",
+        "twitterOauthTokenSecret": null,
+        "twitterId": null,
+        "twitterOauthAccessToken": null,
+        "createdAt": "2024-08-07T02:50:31.205Z",
+        "updatedAt": "2024-08-07T03:10:50.040Z",
+        "referrerId": "0d2d86e6-81e0-47aa-ac8f-bb0484babffe",
+        "totalPoints": "30000",
+        "referrals": {
+            "points": "0",
+            "count": "0"
+        },
+        "campaigns": [
+            {
+                "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
+                "campaignId": "05c92deb-9b82-430b-8715-f2e6396a86a3",
+                "completedAt": "2024-08-07T02:50:31.213Z",
+                "pointsEarned": "5000",
+                "createdAt": "2024-08-07T02:50:31.213Z",
+                "updatedAt": "2024-08-07T02:50:31.213Z",
+                "name": "Welcome Aboard"
+            },
+            {
+                "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
+                "campaignId": "809d150c-bcda-46e9-aa04-797a0a7115eb",
+                "completedAt": "2024-08-07T03:07:02.789Z",
+                "pointsEarned": "5000",
+                "createdAt": "2024-08-07T03:07:02.789Z",
+                "updatedAt": "2024-08-07T03:10:50.053Z",
+                "name": "Swap on Ambient"
+            },
+            {
+                "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
+                "campaignId": "b67cc24d-8da3-44f5-997a-77f4bb660947",
+                "completedAt": "2024-08-07T02:51:49.781Z",
+                "pointsEarned": "10000",
+                "createdAt": "2024-08-07T02:51:49.781Z",
+                "updatedAt": "2024-08-07T03:10:50.053Z",
+                "name": "Drip from Faucet"
+            },
+            {
+                "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
+                "campaignId": "ee9068e1-dbf7-4f69-b5f5-b2e6cb64001a",
+                "completedAt": "2024-08-07T03:10:50.053Z",
+                "pointsEarned": "5000",
+                "createdAt": "2024-08-07T03:10:50.053Z",
+                "updatedAt": "2024-08-07T03:10:50.053Z",
+                "name": "Stake on Nest"
+            }
+        ],
+        "referrer": {
+            "id": "0d2d86e6-81e0-47aa-ac8f-bb0484babffe",
+            "username": "fiang88525287",
+            "walletAddress": "0x72691a36ed1fac3b197fb42612dc15a8958bf9f2",
+            "twitterHandle": "fiang88525287"
+        },
+        "nftEligibility": {
+            "eligible": false,
+            "friendsAndFamily": false,
+            "discord": false,
+            "twitter": false
+        },
+        "hasMinted": false,
+        "hasFullAccess": true,
+        "boardingGroupDates": {
+            "A": "2024-07-11T11:00:00.000Z",
+            "B": "2024-07-11T14:00:00.000Z",
+            "C": "2024-07-15T12:00:00.000Z"
+        },
+        "flightClassInvites": [],
+        "nextFlightClass": {
+            "name": "Business",
+            "id": 1,
+            "referralMultiplier": 2,
+            "reroll": 2,
+            "friendsToUpgrade": 0,
+            "eligibleToUpgrade": false
+        },
+        "flightClassUpgradeInvite": null,
+        "invitesSent": [],
+        "flightClasses": [
+            {
+                "id": 0,
+                "name": "Economy",
+                "eligibleToUpgrade": true,
+                "multipliers": {
+                    "reroll": 1,
+                    "referrals": 1
+                }
+            },
+            {
+                "id": 1,
+                "name": "Business",
+                "eligibleToUpgrade": false,
+                "multipliers": {
+                    "reroll": 2,
+                    "referrals": 2
+                }
+            },
+            {
+                "id": 2,
+                "name": "First",
+                "eligibleToUpgrade": false,
+                "multipliers": {
+                    "reroll": 3,
+                    "referrals": 3
+                }
+            },
+            {
+                "id": 3,
+                "name": "Private",
+                "eligibleToUpgrade": false,
+                "multipliers": {
+                    "reroll": 5,
+                    "referrals": 5
+                }
+            }
+        ]
+    },
+    "authentication": {
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjMwMDE0NTcsImV4cCI6MTcyNTU5MzQ1NywiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiZTM0ZWQ4Y2MtMDY4MC00YWQyLTg1NDQtZThkMjI5ZTYxNmUxIn0.1k6ewpiIX6gtjz2pSvVadApndLBAcxMvUprUzfwGLvY",
+        "payload": {
+            "iat": 1723001457,
+            "exp": 1725593457,
+            "aud": "https://miles.plumenetwork.xyz",
+            "iss": "plumenetwork",
+            "sub": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
+            "jti": "e34ed8cc-0680-4ad2-8544-e8d229e616e1"
+        }
+    },
+    "swap_ts": 1723000221.8929098
+}

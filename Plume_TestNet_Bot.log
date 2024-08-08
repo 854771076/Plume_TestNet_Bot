@@ -747,3 +747,151 @@ index	name      	points  	NFT                           	balance
 2024-08-07T10:44:25.986340+0800 SUCCESS wallets\wallet_1-授权成功-Transaction-交易哈希: 0xa8e5eac0c1fb3f64ea72929330019ccdc253d374d26f8c8045c2ab12324c32a9-交易状态: 1
 2024-08-07T10:44:35.074230+0800 SUCCESS wallets\wallet_1-授权成功-Transaction-交易哈希: 0x7b5e47134baa4d1fbe96bcfb809b9c8e77d2042f1b898052973dfc2384a0ba3a-交易状态: 1
 2024-08-07T10:44:35.075229+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T10:49:01.226713+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T10:49:11.195426+0800 SUCCESS 初始化钱包成功-钱包数量：17
+2024-08-07T10:49:23.079185+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:23.079185+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:23.693311+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:23.694302+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:24.292461+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:24.292461+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:24.901470+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:24.902462+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:25.528166+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:25.529167+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:26.130176+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:26.131168+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:26.726176+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:26.727167+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:27.326858+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:27.327859+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:27.936859+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:27.936859+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:28.551537+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:28.551537+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:29.149536+0800 ERROR 本地ip，未有代理服务白名单，请更换代理或者开通白名单
+2024-08-07T10:49:29.150537+0800 ERROR Error init wallet: cannot access local variable 'data' where it is not associated with a value
+2024-08-07T10:49:31.580358+0800 SUCCESS 钱包信息已更新 ../wallets\wallet8.json
+2024-08-07T10:49:31.580358+0800 SUCCESS wallets\wallet8-登录成功
+2024-08-07T10:49:31.580358+0800 SUCCESS wallets\wallet8初始化成功
+2024-08-07T10:49:31.620359+0800 SUCCESS 钱包信息已更新 ../wallets\wallet5.json
+2024-08-07T10:49:31.621359+0800 SUCCESS wallets\wallet5-登录成功
+2024-08-07T10:49:31.621359+0800 SUCCESS wallets\wallet5初始化成功
+2024-08-07T10:49:31.877600+0800 SUCCESS 钱包信息已更新 ../wallets\wallet9.json
+2024-08-07T10:49:31.878601+0800 SUCCESS wallets\wallet9-登录成功
+2024-08-07T10:49:31.878601+0800 SUCCESS wallets\wallet9初始化成功
+2024-08-07T10:49:32.457601+0800 SUCCESS 钱包信息已更新 ../wallets\wallet6.json
+2024-08-07T10:49:32.458601+0800 SUCCESS wallets\wallet6-登录成功
+2024-08-07T10:49:32.458601+0800 SUCCESS wallets\wallet6初始化成功
+2024-08-07T10:49:35.276556+0800 SUCCESS 钱包信息已更新 ../wallets\wallet7.json
+2024-08-07T10:49:35.277556+0800 SUCCESS wallets\wallet7-登录成功
+2024-08-07T10:49:35.277556+0800 SUCCESS wallets\wallet7初始化成功
+2024-08-07T10:49:35.412563+0800 SUCCESS 钱包信息已更新 ../wallets\wallet3.json
+2024-08-07T10:49:35.413562+0800 SUCCESS wallets\wallet3-登录成功
+2024-08-07T10:49:35.413562+0800 SUCCESS wallets\wallet3初始化成功
+2024-08-07T10:50:22.725730+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T10:50:25.773340+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-07T10:50:30.921149+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T10:50:30.922150+0800 SUCCESS wallets\wallet_1-登录成功
+2024-08-07T10:50:30.922150+0800 SUCCESS wallets\wallet_1初始化成功
+2024-08-07T10:50:34.320582+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_1  	5000    	{}                            	{'ETH': 0.00097}                                                                
+
+2024-08-07T10:50:52.741943+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T10:50:55.939453+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-07T10:51:00.620683+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T10:51:00.620683+0800 SUCCESS wallets\wallet_1-登录成功
+2024-08-07T10:51:00.621684+0800 SUCCESS wallets\wallet_1初始化成功
+2024-08-07T10:51:03.657747+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_1  	5000    	{}                            	{'ETH': 0.00097}                                                                
+
+2024-08-07T10:51:31.757346+0800 WARNING wallets\wallet_1-当日已签到或错误-wallets\wallet_1签到失败-ERROR：('0x30915191', '0x30915191')
+2024-08-07T10:51:32.879336+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"ETH","salt":"0x5cef90d1fd920eec2781daeeffbb1e1ef110e0f76f0dae3d57bf29db97c94c12","signature":"0xb21c5e52e966fa3f4ef8d977027ac8a72162a0c940d0ffd28b1566b01dad749b42c51837b3313b2fa295477ef372e833250172c618b0f7afe52d36ae2afc50871c"}
+2024-08-07T10:51:56.557413+0800 WARNING wallets\wallet_1-当日已领水ETH或错误-wallets\wallet_1领水失败-ETH-ERROR：('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T10:52:08.354809+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"GOON","salt":"0xd7eb31c0b1d1a4bec0507a0958cb98e699b98e80e1a0564397120564a9b1893e","signature":"0x998ee85107c27f720ab416c361839c66d6047fbfc35150e2f4994e35ef62c1c619e8f3316b95c475cb219228031ec57c3ce523c76937a3f1b553519e5725535b1c"}
+2024-08-07T10:52:31.392755+0800 WARNING wallets\wallet_1-当日已领水GOON或错误-wallets\wallet_1领水失败-GOON-ERROR：('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T10:52:31.393756+0800 WARNING wallets\wallet_1-swap失败，等待重试-'GOON'
+2024-08-07T10:54:31.395140+0800 WARNING wallets\wallet_1-swap失败，等待重试-'GOON'
+2024-08-07T10:56:31.396415+0800 WARNING wallets\wallet_1-swap失败，等待重试-'GOON'
+2024-08-07T10:58:31.398046+0800 WARNING wallets\wallet_1-swap失败，等待重试-'GOON'
+2024-08-07T11:00:31.399711+0800 WARNING wallets\wallet_1-swap失败，等待重试-'GOON'
+2024-08-07T11:02:33.632578+0800 WARNING wallets\wallet_1-stake失败，等待重试-wallets\wallet_1-质押失败-ERROR：('0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002b5e3af16b1880000', '0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002b5e3af16b1880000')
+2024-08-07T11:04:35.200136+0800 WARNING wallets\wallet_1-stake失败，等待重试-wallets\wallet_1-质押失败-ERROR：('0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002b5e3af16b1880000', '0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002b5e3af16b1880000')
+2024-08-07T11:06:10.278035+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T11:06:13.436994+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-07T11:06:21.200829+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T11:06:21.201828+0800 SUCCESS wallets\wallet_1-登录成功
+2024-08-07T11:06:21.201828+0800 SUCCESS wallets\wallet_1初始化成功
+2024-08-07T11:06:24.231184+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_1  	20000   	{}                            	{'ETH': 0.00184, 'GOON': 1.0}                                                   
+
+2024-08-07T11:06:36.008557+0800 WARNING wallets\wallet_1-当日已签到或错误-wallets\wallet_1签到失败-ERROR：('0x30915191', '0x30915191')
+2024-08-07T11:06:42.054002+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"ETH","salt":"0x5cef90d1fd920eec2781daeeffbb1e1ef110e0f76f0dae3d57bf29db97c94c12","signature":"0xb21c5e52e966fa3f4ef8d977027ac8a72162a0c940d0ffd28b1566b01dad749b42c51837b3313b2fa295477ef372e833250172c618b0f7afe52d36ae2afc50871c"}
+2024-08-07T11:06:42.722616+0800 WARNING wallets\wallet_1-当日已领水ETH或错误-wallets\wallet_1领水失败-ETH-ERROR：('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:06:44.620229+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"GOON","salt":"0xd7eb31c0b1d1a4bec0507a0958cb98e699b98e80e1a0564397120564a9b1893e","signature":"0x998ee85107c27f720ab416c361839c66d6047fbfc35150e2f4994e35ef62c1c619e8f3316b95c475cb219228031ec57c3ce523c76937a3f1b553519e5725535b1c"}
+2024-08-07T11:06:45.280786+0800 WARNING wallets\wallet_1-当日已领水GOON或错误-wallets\wallet_1领水失败-GOON-ERROR：('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:10:04.786921+0800 ERROR wallets\wallet_1交换失败-ERROR：{'code': -32000, 'message': 'nonce too low: address 0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D, tx: 6 state: 7'}
+2024-08-07T11:10:21.894883+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T11:11:19.218115+0800 WARNING wallets\wallet_1-stake失败，等待重试-wallets\wallet_1-质押失败-ERROR：HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)
+2024-08-07T11:14:30.499292+0800 WARNING wallets\wallet_1-stake失败，等待重试-wallets\wallet_1-质押失败-ERROR：{'code': -32000, 'message': 'nonce too low: address 0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D, tx: 9 state: 10'}
+2024-08-07T11:16:31.851119+0800 WARNING wallets\wallet_1-stake失败，等待重试-wallets\wallet_1-质押失败-ERROR：('0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d000000000000000000000000000000000000000000000002b3344e944a72f17d000000000000000000000000000000000000000000000002b5e3af16b1880000', '0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d000000000000000000000000000000000000000000000002b3344e944a72f17d000000000000000000000000000000000000000000000002b5e3af16b1880000')
+2024-08-07T11:19:26.353051+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T11:19:29.571335+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-07T11:19:35.275604+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T11:19:35.276603+0800 SUCCESS wallets\wallet_1-登录成功
+2024-08-07T11:19:35.276603+0800 SUCCESS wallets\wallet_1初始化成功
+2024-08-07T11:19:38.529673+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_1  	30000   	{}                            	{'ETH': 0.00165, 'sgnUSD': 150.0, 'gnUSD': 49.80652, 'GOON': 0.8}               
+
+2024-08-07T11:19:43.313893+0800 ERROR Error in running contract function: ('0x30915191', '0x30915191')
+2024-08-07T11:19:43.314893+0800 WARNING wallets\wallet_1-当日已签到或错误-wallets\wallet_1签到失败-ERROR：'NoneType' object has no attribute 'hex'
+2024-08-07T11:19:45.258302+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"ETH","salt":"0x5cef90d1fd920eec2781daeeffbb1e1ef110e0f76f0dae3d57bf29db97c94c12","signature":"0xb21c5e52e966fa3f4ef8d977027ac8a72162a0c940d0ffd28b1566b01dad749b42c51837b3313b2fa295477ef372e833250172c618b0f7afe52d36ae2afc50871c"}
+2024-08-07T11:19:45.968303+0800 ERROR Error in running contract function: ('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:19:45.969302+0800 WARNING wallets\wallet_1-当日已领水ETH或错误-wallets\wallet_1领水失败-ETH-ERROR：'NoneType' object has no attribute 'hex'
+2024-08-07T11:19:48.870399+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"GOON","salt":"0xd7eb31c0b1d1a4bec0507a0958cb98e699b98e80e1a0564397120564a9b1893e","signature":"0x998ee85107c27f720ab416c361839c66d6047fbfc35150e2f4994e35ef62c1c619e8f3316b95c475cb219228031ec57c3ce523c76937a3f1b553519e5725535b1c"}
+2024-08-07T11:19:49.577821+0800 ERROR Error in running contract function: ('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:19:49.578825+0800 WARNING wallets\wallet_1-当日已领水GOON或错误-wallets\wallet_1领水失败-GOON-ERROR：'NoneType' object has no attribute 'hex'
+2024-08-07T11:19:49.579824+0800 INFO wallets\wallet_1-距离上次执行-swap-还没有一天
+2024-08-07T11:19:51.020866+0800 ERROR Error in running contract function: ('0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d000000000000000000000000000000000000000000000002b3344e944a72f17d000000000000000000000000000000000000000000000002b5e3af16b1880000', '0xe450d38c0000000000000000000000006e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d000000000000000000000000000000000000000000000002b3344e944a72f17d000000000000000000000000000000000000000000000002b5e3af16b1880000')
+2024-08-07T11:19:51.021866+0800 WARNING wallets\wallet_1-stake失败，等待重试-wallets\wallet_1-质押失败-ERROR：'NoneType' object has no attribute 'hex'
+2024-08-07T11:26:08.645792+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T11:26:11.594064+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-07T11:26:21.455003+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T11:26:21.456004+0800 SUCCESS wallets\wallet_1-登录成功
+2024-08-07T11:26:21.457003+0800 SUCCESS wallets\wallet_1初始化成功
+2024-08-07T11:26:24.618170+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_1  	30000   	{}                            	{'ETH': 0.00165, 'sgnUSD': 150.0, 'gnUSD': 49.80652, 'GOON': 0.8}               
+
+2024-08-07T11:26:31.172944+0800 WARNING wallets\wallet_1-当日已签到或错误-wallets\wallet_1签到失败-ERROR：Error in running contract function: ('0x30915191', '0x30915191')
+2024-08-07T11:26:54.636822+0800 WARNING 请求失败正在重试-171.83.191.111:64256：Failed to perform, curl: (56) Proxy CONNECT aborted. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2024-08-07T11:26:54.637822+0800 ERROR wallets\wallet_1:初始领水/签名异常，被反爬,resp:
+2024-08-07T11:26:54.637822+0800 ERROR wallets\wallet_1:初始领水/签名异常,代理ip被使用,resp:
+2024-08-07T11:27:00.941632+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"ETH","salt":"0x5cef90d1fd920eec2781daeeffbb1e1ef110e0f76f0dae3d57bf29db97c94c12","signature":"0xb21c5e52e966fa3f4ef8d977027ac8a72162a0c940d0ffd28b1566b01dad749b42c51837b3313b2fa295477ef372e833250172c618b0f7afe52d36ae2afc50871c"}
+2024-08-07T11:27:02.295190+0800 WARNING wallets\wallet_1-当日已领水ETH或错误-wallets\wallet_1领水失败-ETH-ERROR：Error in running contract function: ('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:27:03.741383+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"GOON","salt":"0xd7eb31c0b1d1a4bec0507a0958cb98e699b98e80e1a0564397120564a9b1893e","signature":"0x998ee85107c27f720ab416c361839c66d6047fbfc35150e2f4994e35ef62c1c619e8f3316b95c475cb219228031ec57c3ce523c76937a3f1b553519e5725535b1c"}
+2024-08-07T11:27:04.419385+0800 WARNING wallets\wallet_1-当日已领水GOON或错误-wallets\wallet_1领水失败-GOON-ERROR：Error in running contract function: ('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:27:38.259488+0800 ERROR wallets\wallet_1交换失败-ERROR：Error in running contract function: {'code': -32000, 'message': 'nonce too low: address 0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D, tx: 10 state: 11'}
+2024-08-07T11:27:38.260490+0800 WARNING wallets\wallet_1-stake失败，等待重试-gnUSD余额不足，质押：50，余额：49.80652
+2024-08-07T11:29:38.261365+0800 WARNING wallets\wallet_1-stake失败，等待重试-gnUSD余额不足，质押：50，余额：49.80652
+2024-08-07T11:30:47.086907+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-07T11:30:50.313348+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-07T11:30:56.752501+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_1.json
+2024-08-07T11:30:56.752501+0800 SUCCESS wallets\wallet_1-登录成功
+2024-08-07T11:30:56.753502+0800 SUCCESS wallets\wallet_1初始化成功
+2024-08-07T11:31:00.101310+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_1  	30000   	{}                            	{'ETH': 0.00159, 'sgnUSD': 150.0, 'gnUSD': 149.70971, 'GOON': 0.7}              
+
+2024-08-07T11:31:04.854087+0800 WARNING wallets\wallet_1-当日已签到或错误-wallets\wallet_1签到失败-ERROR：Error in running contract function: ('0x30915191', '0x30915191')
+2024-08-07T11:31:09.340527+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"ETH","salt":"0x5cef90d1fd920eec2781daeeffbb1e1ef110e0f76f0dae3d57bf29db97c94c12","signature":"0xb21c5e52e966fa3f4ef8d977027ac8a72162a0c940d0ffd28b1566b01dad749b42c51837b3313b2fa295477ef372e833250172c618b0f7afe52d36ae2afc50871c"}
+2024-08-07T11:31:10.073528+0800 WARNING wallets\wallet_1-当日已领水ETH或错误-wallets\wallet_1领水失败-ETH-ERROR：Error in running contract function: ('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:31:11.497438+0800 SUCCESS wallets\wallet_1:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"GOON","salt":"0xd7eb31c0b1d1a4bec0507a0958cb98e699b98e80e1a0564397120564a9b1893e","signature":"0x998ee85107c27f720ab416c361839c66d6047fbfc35150e2f4994e35ef62c1c619e8f3316b95c475cb219228031ec57c3ce523c76937a3f1b553519e5725535b1c"}
+2024-08-07T11:31:12.210460+0800 WARNING wallets\wallet_1-当日已领水GOON或错误-wallets\wallet_1领水失败-GOON-ERROR：Error in running contract function: ('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
+2024-08-07T11:31:38.617746+0800 WARNING wallets\wallet_1-swap失败，等待重试-wallets\wallet_1交换失败-ERROR：Error in running contract function: {'code': -32000, 'message': 'nonce too low: address 0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D, tx: 11 state: 12'}
+2024-08-07T11:34:40.490396+0800 WARNING wallets\wallet_1-swap失败，等待重试-wallets\wallet_1交换失败-ERROR：Error in running contract function: HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)
+2024-08-07T11:37:05.539503+0800 WARNING wallets\wallet_1-swap失败，等待重试-wallets\wallet_1交换失败-ERROR：Error in running contract function: {'code': -32000, 'message': 'nonce too low: address 0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D, tx: 13 state: 14'}

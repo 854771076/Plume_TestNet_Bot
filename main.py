@@ -77,7 +77,7 @@ class Plume_TestNet_Bot:
         self.rpc_url=rpc_url
         self.wallet_path=wallet_path
         self.contract_path=contract_path
-        self.web3 = Web3(Web3.HTTPProvider(rpc_url))
+        self.web3 = Web3(Web3.HTTPProvider(rpc_url),timeout=120)
         self.show_point=show_point
         self.invited=invited
         self.ip_pool=[]
@@ -316,36 +316,31 @@ class Plume_TestNet_Bot:
         with self._lock:
             try:
                 gas_limit = self.get_contract_transaction_gas_limit(func, wallet['address'])
-                nonce=self.web3.eth.get_transaction_count(wallet['address'])
+                nonce = self.web3.eth.get_transaction_count(wallet['address'])
                 transaction = func.build_transaction({
                     'chainId': self.chain_id,
-                    'gas': int(gas_limit*1.1),
+                    'gas': int(gas_limit * 1.1),
                     'gasPrice': int(self.web3.eth.gas_price * 1.2),
                     'nonce': nonce
                 })
                 signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=wallet['private_key'])
+                
                 # 确保网络已准备好接收
                 tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
+                
                 # 等待交易被挖矿
-                status = self.web3.eth.wait_for_transaction_receipt(tx_hash)
+                try:
+                    status = self.web3.eth.wait_for_transaction_receipt(tx_hash, timeout=120)
+                except Exception as e:
+                    logger.warning(f"Error waiting for transaction receipt: {e}")
+                    return tx_hash, None
+                
                 return tx_hash, status
             except Exception as e:
                 if 'nonce too low' in str(e):
-                    gas_limit = self.get_contract_transaction_gas_limit(func, wallet['address'])
-                    transaction = func.build_transaction({
-                        'chainId': self.chain_id,
-                        'gas': int(gas_limit*1.1),
-                        'gasPrice': int(self.web3.eth.gas_price * 1.2),
-                        'nonce': nonce+1
-                    })
-                    signed_transaction = self.web3.eth.account.sign_transaction(transaction, private_key=wallet['private_key'])
-                    # 确保网络已准备好接收
-                    tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-                    # 等待交易被挖矿
-                    status = self.web3.eth.wait_for_transaction_receipt(tx_hash)
-                    return tx_hash, status
-                else:
-                    raise e
+                    return tx_hash,True
+                raise ValueError(f"Error in running contract function: {e}")
+                
             
                 
     def approve(self,wallet,spender='0x4c722a53cf9eb5373c655e1dd2da95acc10152d1',value=100000,token='GOON',NFT=False,tokenId=287085):
@@ -365,15 +360,17 @@ class Plume_TestNet_Bot:
             logger.success(f'{name}-授权成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
             raise ValueError(f'{name}-授权失败-ERROR：{e}')
-    @ckeck_one_day
+    # @ckeck_one_day
     def swap(self,wallet,base='gnUSD',quote:str='GOON',amount_in_base_currency=0.1,pool_idx = 36000,limit_price=65537,is_buy = False,in_base_qty = False,tip=0,reserve_flags = 0):
+        self.get_wallets()
         if reserve_flags==0:
             if amount_in_base_currency>wallet['balance'][quote]:
                 amount_in_base_currency=0.9*wallet['balance'][quote]
+                assert amount_in_base_currency<=wallet['balance'][quote],f"{quote}余额不足，交换：{amount_in_base_currency}，余额：{wallet['balance'][quote]}"
         else:
             if amount_in_base_currency>wallet['balance'][base]:
                 amount_in_base_currency=0.9*wallet['balance'][base]
-        
+                assert amount_in_base_currency<=wallet['balance'][base],f"{base}余额不足，交换：{amount_in_base_currency}，余额：{wallet['balance'][quote]}"
         name=wallet['name']
         base_contract=self.contracts[base]
         quote_contract=self.contracts[quote]
@@ -391,7 +388,7 @@ class Plume_TestNet_Bot:
             tx_hash,receipt = self.run_contract(func,wallet)
             logger.success(f'{name}-交换成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
-            logger.error(f'{name}交换失败-ERROR：{e}')
+            raise ValueError(f'{name}交换失败-ERROR：{e}')
     @ckeck_one_day
     def checkin(self,wallet:dict):
         checkin_func=self.contracts['checkin'].functions.checkIn()
@@ -454,8 +451,10 @@ class Plume_TestNet_Bot:
         if not self.wallets:
             print_str+='暂无钱包，请创建...'
         logger.success(print_str)
-    @ckeck_one_day
+    # @ckeck_one_day
     def stake(self,wallet,value=50):
+        self.get_wallets()
+        assert value<=wallet['balance']['gnUSD'],f'gnUSD余额不足，质押：{value}，余额：{wallet["balance"]["gnUSD"]}'
         name=wallet['name']
         stake_contract=self.contracts['stake']
         gnUSD_decimals = self.contracts['gnUSD'].functions.decimals().call()
