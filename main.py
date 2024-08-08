@@ -77,7 +77,7 @@ class Plume_TestNet_Bot:
         self.rpc_url=rpc_url
         self.wallet_path=wallet_path
         self.contract_path=contract_path
-        self.web3 = Web3(Web3.HTTPProvider(rpc_url),timeout=120)
+        self.web3 = Web3(Web3.HTTPProvider(rpc_url,timeout=120))
         self.show_point=show_point
         self.invited=invited
         self.ip_pool=[]
@@ -594,5 +594,5 @@ if __name__=='__main__':
     # bot.mint_Kuma(wallet=bot.wallets[0])
     # bot.swap_Kuma(wallet=bot.wallets[0])
     # bot.create_wallets(1)
-    # bot.do_daily_tasks(max_workers=10)
+    bot.do_daily_tasks(max_workers=10)
     # bot.swap(bot.wallets[0])
