@@ -73,6 +73,15 @@ class Plume_TestNet_Bot:
         }
     _lock=threading.Lock()
     def __init__(self,invited='RRU30',init=True,show_point=True,wallet_path='../wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
+        '''
+        invited 邀请码
+        init 是否初始化已有钱包
+        show_point 是否更新积分
+        wallet_path 钱包存放目录
+        contract_path 合约存放目录
+        proxy_api 代理接口
+        rpc_url RPC接口
+        '''
         self.proxy_api=proxy_api
         self.rpc_url=rpc_url
         self.wallet_path=wallet_path
@@ -84,6 +93,7 @@ class Plume_TestNet_Bot:
         # 检查连接是否成功
         if not self.web3.is_connected():
             raise Exception("无法连接到 plumenet 节点")
+        
         self.chain_id=161221135
         # 初始化钱包
         self.wallets=[]
@@ -96,6 +106,9 @@ class Plume_TestNet_Bot:
             self.init_accounts()
             self.show_inited_account()
     def get_sign(self,wallet,msg):
+        '''
+        钱包签名
+        '''
         # 账户信息
         private_key = wallet['private_key']
         address =wallet['address']
@@ -106,6 +119,9 @@ class Plume_TestNet_Bot:
         # 打印签名的消息
         return signed_message.signature.hex()
     def check_balance(self,address):
+        '''
+        获取钱包余额
+        '''
         try:
             # 获取账户余额（单位是 Wei）
             balance={}
@@ -123,6 +139,9 @@ class Plume_TestNet_Bot:
             pass
         return balance
     def get_NFTs(self,address):
+        '''
+        获取NFT列表
+        '''
         try:
             # 获取账户余额（单位是 Wei）
             balance={}
@@ -134,6 +153,9 @@ class Plume_TestNet_Bot:
             pass
         return balance
     def generate_and_save_wallet(self,filename):
+        '''
+        生成钱包
+        '''
         # 生成新账户
         account = self.web3.eth.account.create()
         # 获取地址和私钥
@@ -151,6 +173,9 @@ class Plume_TestNet_Bot:
             json.dump(wallet_info, file, indent=4)
         logger.success(f"创建钱包成功-已保存到 {filename}")
     def load_wallet(self,filename):
+        '''
+        加载钱包
+        '''
         # 从 JSON 文件中读取钱包信息
         with open(filename, 'r') as file:
             wallet_info = json.load(file)
@@ -163,12 +188,18 @@ class Plume_TestNet_Bot:
         
         return wallet_info
     def load_contract(self,filename:str):
+        '''
+        加载合约
+        '''
         # 从 JSON 文件中读取钱包信息
         with open(filename, 'r') as file:
             contract_info = json.load(file)
         return contract_info
     
     def update_wallet(self,wallet:dict,**params):
+        '''
+        更新数据
+        '''
         filename=wallet.get('filename')
         for k,v in params.items():
             wallet[k]=v
@@ -177,6 +208,9 @@ class Plume_TestNet_Bot:
         logger.success(f"钱包信息已更新 {filename}")
         
     def get_wallets(self,max_workers=10):
+        '''
+        获取钱包保存目录下所有钱包
+        '''
         self.wallets=[]
         wallets_list = glob.glob(os.path.join(self.wallet_path, '*'))
         # 使用线程池来并发加载钱包
@@ -191,6 +225,9 @@ class Plume_TestNet_Bot:
                     logger.error(f"Error loading wallet: {e}")
         return wallets_list
     def get_contract(self):
+        '''
+        加载并实例化所有合约
+        '''
         self.contracts={}
         contracts_list = glob.glob(os.path.join(self.contract_path, '*'))
         # 使用线程池来并发加载钱包
@@ -203,6 +240,9 @@ class Plume_TestNet_Bot:
             contract = self.web3.eth.contract(address=contract_address, abi=abi)
             self.contracts[name]=contract
     def create_wallets(self,num=1):
+        '''
+        批量创建钱包
+        '''
         index=len(self.wallets)+1
         for i in range(index,index+num):
             filename=os.path.join(self.wallet_path,f'wallet{i}.json')
@@ -215,13 +255,18 @@ class Plume_TestNet_Bot:
         self.init_accounts()
 
     def _empty_response(self):
-        # 创建一个空响应对象
+        '''
+        创建一个空响应对象
+        '''
         response = requests.models.Response()
         response.status_code = 500  # 设置一个错误的状态码
         response._content = b'{}'  # 设置响应内容为空的 JSON 对象
         response.json = lambda: {}  # 设置 .json() 方法返回一个空字典
         return response
     def get_proxy(self):
+        '''
+        获取代理ip
+        '''
         with self._lock:
             if not self.ip_pool:
                 self.ip_pool=requests.get(f"{self.proxy_api}").json().get('data',[{}])
@@ -234,6 +279,9 @@ class Plume_TestNet_Bot:
     # def delete_proxy(self,proxy):
     #     requests.get(f"{self.proxy_api}/delete/?proxy={proxy}")
     def _get(self,url,headers,proxy=None):
+        '''
+        GET请求
+        '''
         headers['User-Agent']=ua.chrome
         if not proxy:
             proxy = self.get_proxy().get("proxy")
@@ -251,7 +299,9 @@ class Plume_TestNet_Bot:
         # self.delete_proxy(proxy)
         return self._empty_response()
     def _post(self,url,headers,json,proxy=None):
-
+        '''
+        POST请求
+        '''
         headers['User-Agent']=ua.chrome
         if not proxy:
             proxy = self.get_proxy().get("proxy")
@@ -270,6 +320,9 @@ class Plume_TestNet_Bot:
         # self.delete_proxy(proxy)
         return self._empty_response()
     def get_faucet_sign(self,wallet:dict,token:str='ETH'): 
+        '''
+        获取领水签名
+        '''
         assert token in ('GOON','ETH')
         address=wallet.get('address')
         wallet_name=wallet.get('name')
@@ -297,7 +350,9 @@ class Plume_TestNet_Bot:
         
     
     def get_contract_transaction_gas_limit(self,func,address):
-        # 估算所需的 gas
+        '''
+        估算所需的 gas
+        '''
         gas_estimate = func.estimate_gas({
         'from': address
         })
@@ -313,6 +368,9 @@ class Plume_TestNet_Bot:
         # 返回估算的 gas
         return gas_estimate
     def run_contract(self, func, wallet):
+        '''
+        执行合约
+        '''
         with self._lock:
             try:
                 gas_limit = self.get_contract_transaction_gas_limit(func, wallet['address'])
@@ -344,6 +402,9 @@ class Plume_TestNet_Bot:
             
                 
     def approve(self,wallet,spender='0x4c722a53cf9eb5373c655e1dd2da95acc10152d1',value=100000,token='GOON',NFT=False,tokenId=287085):
+        '''
+        授权NTF或者Token
+        '''
         name=wallet['name']
         token_contract=self.contracts[token]
         spender=self.web3.to_checksum_address(spender)
@@ -362,6 +423,9 @@ class Plume_TestNet_Bot:
             raise ValueError(f'{name}-授权失败-ERROR：{e}')
     # @ckeck_one_day
     def swap(self,wallet,base='gnUSD',quote:str='GOON',amount_in_base_currency=0.1,pool_idx = 36000,limit_price=65537,is_buy = False,in_base_qty = False,tip=0,reserve_flags = 0):
+        '''
+        交换代币
+        '''
         self.get_wallets()
         if reserve_flags==0:
             if amount_in_base_currency>wallet['balance'][quote]:
@@ -391,6 +455,9 @@ class Plume_TestNet_Bot:
             raise ValueError(f'{name}交换失败-ERROR：{e}')
     # @ckeck_one_day
     def checkin(self,wallet:dict):
+        '''
+        签到
+        '''
         checkin_func=self.contracts['checkin'].functions.checkIn()
         # 构建交易
         name=wallet['name']
@@ -402,7 +469,7 @@ class Plume_TestNet_Bot:
             raise ValueError(f'{name}签到失败-ERROR：{e}')
     def login(self,wallet):
         '''
-        登录官网
+        登录官网，刷粉核心代码
         '''
         name=wallet['name']
         address=wallet['address']
@@ -429,6 +496,9 @@ class Plume_TestNet_Bot:
                 logger.error(f'{name}-登录失败,重新登录中-ERROR：{data}')
     # @ckeck_one_day
     def get_faucet(self,wallet:dict,token='ETH'):
+        '''
+        官网领水
+        '''
         assert token in ('GOON','ETH')
         data=self.get_faucet_sign(wallet=wallet,token=token)
 
@@ -444,6 +514,9 @@ class Plume_TestNet_Bot:
         except Exception as e:
             raise ValueError(f'{name}领水失败-{token}-ERROR：{e}')
     def show_inited_account(self):
+        '''
+        打印钱包信息
+        '''
         print_str=f'\n{"index":<3}\t{"name":<10}\t{"points":<8}\t{"NFT":<30}\t{"balance":<80}\n'
         for wallet in self.wallets:
             name=wallet['name'].split('\\')[-1].replace('.json','')
@@ -453,6 +526,9 @@ class Plume_TestNet_Bot:
         logger.success(print_str)
     # @ckeck_one_day
     def stake(self,wallet,value=50):
+        '''
+        质押gnUSD
+        '''
         self.get_wallets()
         assert value<=wallet['balance']['gnUSD'],f'gnUSD余额不足，质押：{value}，余额：{wallet["balance"]["gnUSD"]}'
         name=wallet['name']
@@ -467,6 +543,9 @@ class Plume_TestNet_Bot:
         except Exception as e:
             raise ValueError(f'{name}-质押失败-ERROR：{e}')
     def check_Kuma(self,wallet):
+        '''
+        检查是否有Kuma NFT
+        '''
         NTFS=self.get_NFTs(wallet['address'])
         kuma_ID=[]
         for key in NTFS.keys():
@@ -475,6 +554,9 @@ class Plume_TestNet_Bot:
         return kuma_ID
 
     def init_account(self,wallet:dict):
+        '''
+        初始化未领水的钱包
+        '''
         name=wallet['name'] 
         if not wallet.get('init_approve'):
             self.get_faucet_sign(wallet,'ETH')
@@ -488,6 +570,9 @@ class Plume_TestNet_Bot:
             self.login(wallet)    
         logger.success(f'{name}初始化成功')
     def daily_task(self,wallet):
+        '''
+        日常任务
+        '''
         try:
             self.checkin(wallet=wallet)
         except Exception as e:
@@ -533,6 +618,9 @@ class Plume_TestNet_Bot:
         
     # @ckeck_one_day
     def mint_Kuma(self,wallet):
+        '''
+        铸造Kuma NFT
+        '''
         name=wallet['name']
         aick_contract=self.contracts['Kuma']
         func=aick_contract.functions.mintAICK()
@@ -554,6 +642,9 @@ class Plume_TestNet_Bot:
             raise ValueError(f'{name}-Kuma mint失败-ERROR：{e}')
     # @ckeck_one_day
     def swap_Kuma(self,wallet):
+        '''
+        交换Kuma NFT
+        '''
         name=wallet['name']
         aick_contract=self.contracts['Kuma-SWAP']
         try:
@@ -564,6 +655,10 @@ class Plume_TestNet_Bot:
         except Exception as e:
             raise ValueError(f'{name}-AICK swap失败-ERROR：{e}')
     def init_accounts(self,max_workers=10):
+        '''
+        批量初始化账号
+        max_workers 线程数
+        '''
         self.get_wallets()
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [executor.submit(self.init_account, wallet) for wallet in self.wallets]
@@ -575,6 +670,10 @@ class Plume_TestNet_Bot:
         
         self.get_wallets()
     def do_daily_tasks(self,max_workers=10):
+        '''
+        批量执行日常任务
+        max_workers 线程数
+        '''
         self.get_wallets()
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [executor.submit(self.daily_task, wallet) for wallet in self.wallets]
