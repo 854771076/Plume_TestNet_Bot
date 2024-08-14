@@ -10,7 +10,7 @@ bot=Plume_TestNet_Bot(show_point=True)
 scheduler = BackgroundScheduler()
 
 # 定义一个每24小时执行一次的触发器
-trigger = CronTrigger(hour=0, minute=30)
+trigger = IntervalTrigger(hours=24)
 
 # 添加任务到调度器
 scheduler.add_job(bot.do_daily_tasks, trigger)

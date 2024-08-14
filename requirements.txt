@@ -3,3 +3,4 @@ loguru
 fake_useragent
 requests
 curl_cffi
+apscheduler

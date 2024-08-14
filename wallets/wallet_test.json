@@ -1,18 +1,18 @@
 {
     "address": "0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D",
     "private_key": "0xa9e43dcddb7836e2f869219cfc85b064a024bb3c0af6247e6696d5779a720e27",
-    "name": "wallets\\wallet_1",
+    "name": "wallets\\wallet_test",
     "balance": {
-        "ETH": 0.00159,
-        "sgnUSD": 150.0,
-        "gnUSD": 149.70971,
-        "GOON": 0.7
+        "ETH": 0.00183,
+        "gnUSD": 899.01762,
+        "sgnUSD": 201.43507,
+        "GOON": 0.9
     },
     "NFTs": {},
     "init": true,
-    "filename": "./wallets\\wallet_1.json",
+    "filename": "./wallets\\wallet_test.json",
     "init_approve": true,
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjMwMDE0NTcsImV4cCI6MTcyNTU5MzQ1NywiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiZTM0ZWQ4Y2MtMDY4MC00YWQyLTg1NDQtZThkMjI5ZTYxNmUxIn0.1k6ewpiIX6gtjz2pSvVadApndLBAcxMvUprUzfwGLvY",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjM2MDM4MTQsImV4cCI6MTcyNjE5NTgxNCwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMGUyMWRhZmQtNjMwMi00YWM2LTg5YWUtNDRiY2ZjNzM0NTFlIn0.3EvLrbWhp_-wsV5kgjIpXjghgZtahHyYse4mUW0aDk0",
     "user": {
         "id": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
         "walletAddress": "0x6e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d",
@@ -29,15 +29,15 @@
         "canMintRareNFTs": false,
         "boardingGroup": null,
         "flightClass": "Economy",
-        "onChainPoints": "5000",
+        "onChainPoints": "12500",
         "bonusPoints": "0",
         "twitterOauthTokenSecret": null,
         "twitterId": null,
         "twitterOauthAccessToken": null,
         "createdAt": "2024-08-07T02:50:31.205Z",
-        "updatedAt": "2024-08-07T03:10:50.040Z",
+        "updatedAt": "2024-08-08T12:26:02.948Z",
         "referrerId": "0d2d86e6-81e0-47aa-ac8f-bb0484babffe",
-        "totalPoints": "30000",
+        "totalPoints": "47500",
         "referrals": {
             "points": "0",
             "count": "0"
@@ -56,9 +56,9 @@
                 "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
                 "campaignId": "809d150c-bcda-46e9-aa04-797a0a7115eb",
                 "completedAt": "2024-08-07T03:07:02.789Z",
-                "pointsEarned": "5000",
+                "pointsEarned": "10000",
                 "createdAt": "2024-08-07T03:07:02.789Z",
-                "updatedAt": "2024-08-07T03:10:50.053Z",
+                "updatedAt": "2024-08-08T12:26:02.954Z",
                 "name": "Swap on Ambient"
             },
             {
@@ -67,16 +67,16 @@
                 "completedAt": "2024-08-07T02:51:49.781Z",
                 "pointsEarned": "10000",
                 "createdAt": "2024-08-07T02:51:49.781Z",
-                "updatedAt": "2024-08-07T03:10:50.053Z",
+                "updatedAt": "2024-08-08T12:26:02.954Z",
                 "name": "Drip from Faucet"
             },
             {
                 "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
                 "campaignId": "ee9068e1-dbf7-4f69-b5f5-b2e6cb64001a",
                 "completedAt": "2024-08-07T03:10:50.053Z",
-                "pointsEarned": "5000",
+                "pointsEarned": "10000",
                 "createdAt": "2024-08-07T03:10:50.053Z",
-                "updatedAt": "2024-08-07T03:10:50.053Z",
+                "updatedAt": "2024-08-08T12:26:02.954Z",
                 "name": "Stake on Nest"
             }
         ],
@@ -114,7 +114,7 @@
             {
                 "id": 0,
                 "name": "Economy",
-                "eligibleToUpgrade": true,
+                "eligibleToUpgrade": false,
                 "multipliers": {
                     "reroll": 1,
                     "referrals": 1
@@ -147,17 +147,18 @@
                     "referrals": 5
                 }
             }
-        ]
+        ],
+        "ethSignContractId": "ES-V-JE6UTYZebW9lBVMRU-meD"
     },
     "authentication": {
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjMwMDE0NTcsImV4cCI6MTcyNTU5MzQ1NywiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiZTM0ZWQ4Y2MtMDY4MC00YWQyLTg1NDQtZThkMjI5ZTYxNmUxIn0.1k6ewpiIX6gtjz2pSvVadApndLBAcxMvUprUzfwGLvY",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjM2MDM4MTQsImV4cCI6MTcyNjE5NTgxNCwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMGUyMWRhZmQtNjMwMi00YWM2LTg5YWUtNDRiY2ZjNzM0NTFlIn0.3EvLrbWhp_-wsV5kgjIpXjghgZtahHyYse4mUW0aDk0",
         "payload": {
-            "iat": 1723001457,
-            "exp": 1725593457,
+            "iat": 1723603814,
+            "exp": 1726195814,
             "aud": "https://miles.plumenetwork.xyz",
             "iss": "plumenetwork",
             "sub": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
-            "jti": "e34ed8cc-0680-4ad2-8544-e8d229e616e1"
+            "jti": "0e21dafd-6302-4ac6-89ae-44bcfc73451e"
         }
     },
     "swap_ts": 1723000221.8929098

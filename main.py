@@ -72,17 +72,19 @@ class Plume_TestNet_Bot:
             'sec-ch-ua-platform': '"Windows"',
         }
     _lock=threading.Lock()
-    def __init__(self,invited='RRU30',init=True,show_point=True,wallet_path='../wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
+    def __init__(self,invited='RRU30',proxy=False,init=True,show_point=True,wallet_path='./wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
         '''
         invited 邀请码
         init 是否初始化已有钱包
         show_point 是否更新积分
         wallet_path 钱包存放目录
         contract_path 合约存放目录
+        proxy 是否使用代理
         proxy_api 代理接口
         rpc_url RPC接口
         '''
         self.proxy_api=proxy_api
+        self.proxy=proxy
         self.rpc_url=rpc_url
         self.wallet_path=wallet_path
         self.contract_path=contract_path
@@ -283,41 +285,56 @@ class Plume_TestNet_Bot:
         GET请求
         '''
         headers['User-Agent']=ua.chrome
-        if not proxy:
-            proxy = self.get_proxy().get("proxy")
-        try:
-            resp = requests.get(url, proxies={
-                'http': "http://" + proxy,
-                'https': "http://" + proxy
-            },headers=headers, timeout=(30, 30),impersonate='edge99')
-            # 使用代理访问
-            # self.delete_proxy(proxy)
-            return resp
-        except Exception as e:
-            logger.warning(f'请求失败正在重试：{e}')
-        # 删除代理池中代理
-        # self.delete_proxy(proxy)
+        if self.proxy:
+            if not proxy:
+                proxy = self.get_proxy().get("proxy")
+            try:
+                resp = requests.get(url, proxies={
+                    'http': "http://" + proxy,
+                    'https': "http://" + proxy
+                },headers=headers, timeout=(30, 30),impersonate='edge99')
+                # 使用代理访问
+                # self.delete_proxy(proxy)
+                return resp
+            except Exception as e:
+                logger.warning(f'请求失败正在重试：{e}')
+        else:
+            try:
+                resp = requests.get(url,headers=headers, timeout=(30, 30),impersonate='edge99')
+                # 使用代理访问
+                # self.delete_proxy(proxy)
+                return resp
+            except Exception as e:
+                logger.warning(f'请求失败正在重试：{e}')
         return self._empty_response()
     def _post(self,url,headers,json,proxy=None):
         '''
         POST请求
         '''
         headers['User-Agent']=ua.chrome
-        if not proxy:
-            proxy = self.get_proxy().get("proxy")
-        try:
+        if self.proxy:
+            if not proxy:
+                proxy = self.get_proxy().get("proxy")
+            try:
 
-            resp = requests.post(url, proxies={
-                'http': "http://" + proxy,
-                'https': "http://" + proxy
-            },json=json,headers=headers, timeout=(30, 30),impersonate='edge99')
-            # self.delete_proxy(proxy)
-            # 使用代理访问
-            return resp
-        except Exception as e:
-            logger.warning(f'请求失败正在重试-{proxy}：{e}')
-        # 删除代理池中代理
-        # self.delete_proxy(proxy)
+                resp = requests.post(url, proxies={
+                    'http': "http://" + proxy,
+                    'https': "http://" + proxy
+                },json=json,headers=headers, timeout=(30, 30),impersonate='edge99')
+                # self.delete_proxy(proxy)
+                # 使用代理访问
+                return resp
+            except Exception as e:
+                logger.warning(f'请求失败正在重试-{proxy}：{e}')
+        else:
+            try:
+
+                resp = requests.post(url,json=json,headers=headers, timeout=(30, 30),impersonate='edge99')
+                # self.delete_proxy(proxy)
+                # 使用代理访问
+                return resp
+            except Exception as e:
+                logger.warning(f'请求失败正在重试-{proxy}：{e}')
         return self._empty_response()
     def get_faucet_sign(self,wallet:dict,token:str='ETH'): 
         '''
@@ -396,7 +413,7 @@ class Plume_TestNet_Bot:
                 return tx_hash, status
             except Exception as e:
                 if 'nonce too low' in str(e):
-                    return self.run_contract(self, func, wallet)
+                    return self.run_contract( func, wallet)
                 raise ValueError(f"Error in running contract function: {e}")
                 
             
