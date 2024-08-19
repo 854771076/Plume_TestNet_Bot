@@ -412,8 +412,7 @@ class Plume_TestNet_Bot:
                 
                 return tx_hash, status
             except Exception as e:
-                if 'nonce too low' in str(e):
-                    return self.run_contract( func, wallet)
+
                 raise ValueError(f"Error in running contract function: {e}")
                 
             
