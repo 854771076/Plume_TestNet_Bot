@@ -8757,3 +8757,18 @@ index	name      	points  	NFT                           	balance
 2024-08-19T10:34:43.107917+0800 WARNING wallets\wallet_test-当日已领水ETH或错误-wallets\wallet_test领水失败-ETH-ERROR：Error in running contract function: ('execution reverted: Signature is already used', '0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000195369676e617475726520697320616c7265616479207573656400000000000000')
 2024-08-19T10:34:44.104674+0800 SUCCESS wallets\wallet_test:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"GOON","salt":"0x8f875426a67d27012274a73614766f7e132d71b1f72c9c28fb6e82a85ac05908","signature":"0xfb15e83a2a7040500844b932326549f1fb366afc3e4bc4a4f9b3da5a1d3586ec67aa5eac2abe259e0b1377d5d1aa2472649dc1951e87c063101b006b861b5d091b"}
 2024-08-19T10:35:45.476008+0800 WARNING wallets\wallet_test-当日已领水GOON或错误-wallets\wallet_test领水失败-GOON-ERROR：Error in running contract function: HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)
+2024-08-19T15:01:13.802769+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-19T15:01:19.590669+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-19T15:01:25.422877+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_test.json
+2024-08-19T15:01:25.423876+0800 SUCCESS wallets\wallet_test-登录成功
+2024-08-19T15:01:25.423876+0800 SUCCESS wallets\wallet_test初始化成功
+2024-08-19T15:01:29.580842+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_test	95000   	{}                            	{'ETH': 0.00354, 'gnUSD': 1298.68784, 'sgnUSD': 202.49805, 'GOON': 1.5}         
+
+2024-08-19T15:01:35.902888+0800 WARNING wallets\wallet_test-当日已签到或错误-wallets\wallet_test签到失败-ERROR：Error in running contract function: ('0x30915191', '0x30915191')
+2024-08-19T15:01:37.007848+0800 SUCCESS wallets\wallet_test:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"ETH","salt":"0xd91171fe9f0ce2ee7253764957c36b2dda56693afb875344774d158117113df7","signature":"0xdb76a4a322ea876ed3d5324514cbc9dc66a25d2aaea5de62cc59ae3b1c5569df12131bda73f34d5f47949aa21ad51a30952597777aeea24843c01e6946239af81c"}
+2024-08-19T15:02:34.195537+0800 WARNING wallets\wallet_test-当日已领水ETH或错误-wallets\wallet_test领水失败-ETH-ERROR：Error in running contract function: HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)
+2024-08-19T15:02:35.459486+0800 SUCCESS wallets\wallet_test:初始领水/签名成功,resp:{"tokenDrip":"","walletAddress":"0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D","token":"GOON","salt":"0xf3c06922ce7115a7fa00305ab9e0014a7b58a26540c85514922a2a811e69822f","signature":"0x1dcc2c01cd7c5e636ccbd5e68306af6b914b52e80d37256a647bb4b7a6d8b3af1aa835f24d914077b21234d5a46b8c496d16d98cc6c633d10a86a7f56fe073541b"}
+2024-08-19T15:03:36.910754+0800 WARNING wallets\wallet_test-当日已领水GOON或错误-wallets\wallet_test领水失败-GOON-ERROR：Error in running contract function: HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)
+2024-08-19T15:04:43.957247+0800 WARNING wallets\wallet_test-swap失败，等待重试-wallets\wallet_test交换失败-ERROR：Error in running contract function: HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)

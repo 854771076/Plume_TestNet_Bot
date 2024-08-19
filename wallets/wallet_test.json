@@ -3,16 +3,16 @@
     "private_key": "0xa9e43dcddb7836e2f869219cfc85b064a024bb3c0af6247e6696d5779a720e27",
     "name": "wallets\\wallet_test",
     "balance": {
-        "ETH": 0.00262,
-        "gnUSD": 1198.77149,
+        "ETH": 0.00354,
+        "gnUSD": 1298.68784,
         "sgnUSD": 202.49805,
-        "GOON": 0.6
+        "GOON": 1.5
     },
     "NFTs": {},
     "init": true,
     "filename": "./wallets\\wallet_test.json",
     "init_approve": true,
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwMzQ4MDQsImV4cCI6MTcyNjYyNjgwNCwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMGJlYTgwZWUtYjYwYS00MjI5LWJjNTktYWQ4ZDIwNjI2NGM3In0.wAaD-daQB7qauGZv3M_05RqVeo6uvtoIly_JslPRWCE",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTA4ODYsImV4cCI6MTcyNjY0Mjg4NiwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMWJmMzQ3ZTUtZWNhOS00Y2E4LWIwNjktYWMyODcyNjI1YTY1In0.P3Pu5yqgs9RfEoYt6ucEgvL8YcUiBlh-OqQr-6uEbF0",
     "user": {
         "id": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
         "walletAddress": "0x6e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d",
@@ -35,9 +35,9 @@
         "twitterId": null,
         "twitterOauthAccessToken": null,
         "createdAt": "2024-08-07T02:50:31.205Z",
-        "updatedAt": "2024-08-19T02:30:48.058Z",
+        "updatedAt": "2024-08-19T02:36:22.834Z",
         "referrerId": "0d2d86e6-81e0-47aa-ac8f-bb0484babffe",
-        "totalPoints": "85000",
+        "totalPoints": "95000",
         "referrals": {
             "points": "0",
             "count": "0"
@@ -56,18 +56,18 @@
                 "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
                 "campaignId": "809d150c-bcda-46e9-aa04-797a0a7115eb",
                 "completedAt": "2024-08-07T03:07:02.789Z",
-                "pointsEarned": "15000",
+                "pointsEarned": "20000",
                 "createdAt": "2024-08-07T03:07:02.789Z",
-                "updatedAt": "2024-08-19T02:30:48.092Z",
+                "updatedAt": "2024-08-19T02:36:22.857Z",
                 "name": "Swap on Ambient"
             },
             {
                 "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
                 "campaignId": "b67cc24d-8da3-44f5-997a-77f4bb660947",
                 "completedAt": "2024-08-07T02:51:49.781Z",
-                "pointsEarned": "25000",
+                "pointsEarned": "30000",
                 "createdAt": "2024-08-07T02:51:49.781Z",
-                "updatedAt": "2024-08-19T02:30:48.092Z",
+                "updatedAt": "2024-08-19T02:36:22.857Z",
                 "name": "Drip from Faucet"
             },
             {
@@ -76,7 +76,7 @@
                 "completedAt": "2024-08-07T03:10:50.053Z",
                 "pointsEarned": "10000",
                 "createdAt": "2024-08-07T03:10:50.053Z",
-                "updatedAt": "2024-08-19T02:30:48.092Z",
+                "updatedAt": "2024-08-19T02:36:22.857Z",
                 "name": "Stake on Nest"
             }
         ],
@@ -151,14 +151,14 @@
         "ethSignContractId": "ES-V-JE6UTYZebW9lBVMRU-meD"
     },
     "authentication": {
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwMzQ4MDQsImV4cCI6MTcyNjYyNjgwNCwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMGJlYTgwZWUtYjYwYS00MjI5LWJjNTktYWQ4ZDIwNjI2NGM3In0.wAaD-daQB7qauGZv3M_05RqVeo6uvtoIly_JslPRWCE",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTA4ODYsImV4cCI6MTcyNjY0Mjg4NiwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMWJmMzQ3ZTUtZWNhOS00Y2E4LWIwNjktYWMyODcyNjI1YTY1In0.P3Pu5yqgs9RfEoYt6ucEgvL8YcUiBlh-OqQr-6uEbF0",
         "payload": {
-            "iat": 1724034804,
-            "exp": 1726626804,
+            "iat": 1724050886,
+            "exp": 1726642886,
             "aud": "https://miles.plumenetwork.xyz",
             "iss": "plumenetwork",
             "sub": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
-            "jti": "0bea80ee-b60a-4229-bc59-ad8d206264c7"
+            "jti": "1bf347e5-eca9-4ca8-b069-ac2872625a65"
         }
     },
     "swap_ts": 1723000221.8929098

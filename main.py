@@ -72,7 +72,7 @@ class Plume_TestNet_Bot:
             'sec-ch-ua-platform': '"Windows"',
         }
     _lock=threading.Lock()
-    def __init__(self,invited='RRU30',proxy=False,init=True,show_point=True,wallet_path='./wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
+    def __init__(self,invited='RRU30',proxy=False,init=True,show_point=True,wallet_path='./wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet.rpc.caldera.xyz/http'):
         '''
         invited 邀请码
         init 是否初始化已有钱包
