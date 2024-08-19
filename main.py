@@ -12,6 +12,18 @@ import time
 from curl_cffi import requests
 import threading
 from functools import *
+from web3.providers.rpc import HTTPProvider
+ua=UserAgent()
+class CustomHTTPProvider(HTTPProvider):
+
+    def get_request_headers(self):
+        return {
+            "Content-Type": "application/json",
+            'Origin': 'https://miles.plumenetwork.xyz',
+            'Referer': 'https://miles.plumenetwork.xyz/',
+            'User-Agent': ua.chrome,
+        }
+
 logger.add(
     "Plume_TestNet_Bot.log",
     rotation="1 week",
@@ -52,7 +64,7 @@ def ckeck_one_day(func):
         else:
             return pass_func(name)
     return wrapper
-ua=UserAgent()
+
 class Plume_TestNet_Bot:
     headers = {
             'Accept': 'application/json',
@@ -72,7 +84,7 @@ class Plume_TestNet_Bot:
             'sec-ch-ua-platform': '"Windows"',
         }
     _lock=threading.Lock()
-    def __init__(self,invited='RRU30',proxy=False,init=True,show_point=True,wallet_path='./wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet.rpc.caldera.xyz/http'):
+    def __init__(self,invited='RRU30',proxy=False,init=True,show_point=True,wallet_path='./wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
         '''
         invited 邀请码
         init 是否初始化已有钱包
@@ -88,7 +100,7 @@ class Plume_TestNet_Bot:
         self.rpc_url=rpc_url
         self.wallet_path=wallet_path
         self.contract_path=contract_path
-        self.web3 = Web3(Web3.HTTPProvider(rpc_url))
+        self.web3 = Web3(CustomHTTPProvider(rpc_url))
         self.show_point=show_point
         self.invited=invited
         self.ip_pool=[]
@@ -602,31 +614,20 @@ class Plume_TestNet_Bot:
         except Exception as e:
             logger.warning(f"{wallet.get('name')}-当日已领水GOON或错误-{e}") 
 
-        count=5
-        while count>0:
-            try:
-                self.swap(wallet=wallet)
-                break
-            except Exception as e:
-                logger.warning(f"{wallet.get('name')}-swap失败，等待重试-{e}")
-                time.sleep(60*2)
-            finally:
-                count-=1
-        count=5
-        while count>0:
-            try:
-                self.stake(wallet=wallet)
-                break
-            except Exception as e:
-                logger.warning(f"{wallet.get('name')}-stake失败，等待重试-{e}")
-                time.sleep(60*2)
-            finally:
-                count-=1
+        try:
+            self.swap(wallet=wallet)
+        except Exception as e:
+            logger.warning(f"{wallet.get('name')}-swap失败，等待重试-{e}")
+            time.sleep(60*2)
+        try:
+            self.stake(wallet=wallet)
+        except Exception as e:
+            logger.warning(f"{wallet.get('name')}-stake失败，等待重试-{e}")
+            time.sleep(60*2)
         try:
             self.mint_Kuma(wallet=wallet)
         except Exception as e:
             logger.warning(f"{e}")
-
         try:
             self.swap_Kuma(wallet=wallet)
         except Exception as e:

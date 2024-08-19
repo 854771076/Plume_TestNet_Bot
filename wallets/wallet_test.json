@@ -3,16 +3,16 @@
     "private_key": "0xa9e43dcddb7836e2f869219cfc85b064a024bb3c0af6247e6696d5779a720e27",
     "name": "wallets\\wallet_test",
     "balance": {
-        "ETH": 0.00354,
-        "gnUSD": 1298.68784,
+        "ETH": 0.00444,
+        "gnUSD": 1498.52045,
         "sgnUSD": 202.49805,
-        "GOON": 1.5
+        "GOON": 2.3
     },
     "NFTs": {},
     "init": true,
     "filename": "./wallets\\wallet_test.json",
     "init_approve": true,
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTA4ODYsImV4cCI6MTcyNjY0Mjg4NiwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMWJmMzQ3ZTUtZWNhOS00Y2E4LWIwNjktYWMyODcyNjI1YTY1In0.P3Pu5yqgs9RfEoYt6ucEgvL8YcUiBlh-OqQr-6uEbF0",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTI1NTUsImV4cCI6MTcyNjY0NDU1NSwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiOTI1ZTg5OGUtNDhmZi00OTI4LTlhM2EtMWExMTIwMTE5OWY5In0.xzhh0MPBaSCZVm8jOgklH56jBrenWoagMH9wl5R_4SE",
     "user": {
         "id": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
         "walletAddress": "0x6e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d",
@@ -151,14 +151,14 @@
         "ethSignContractId": "ES-V-JE6UTYZebW9lBVMRU-meD"
     },
     "authentication": {
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTA4ODYsImV4cCI6MTcyNjY0Mjg4NiwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiMWJmMzQ3ZTUtZWNhOS00Y2E4LWIwNjktYWMyODcyNjI1YTY1In0.P3Pu5yqgs9RfEoYt6ucEgvL8YcUiBlh-OqQr-6uEbF0",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTI1NTUsImV4cCI6MTcyNjY0NDU1NSwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiOTI1ZTg5OGUtNDhmZi00OTI4LTlhM2EtMWExMTIwMTE5OWY5In0.xzhh0MPBaSCZVm8jOgklH56jBrenWoagMH9wl5R_4SE",
         "payload": {
-            "iat": 1724050886,
-            "exp": 1726642886,
+            "iat": 1724052555,
+            "exp": 1726644555,
             "aud": "https://miles.plumenetwork.xyz",
             "iss": "plumenetwork",
             "sub": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
-            "jti": "1bf347e5-eca9-4ca8-b069-ac2872625a65"
+            "jti": "925e898e-48ff-4928-9a3a-1a11201199f9"
         }
     },
     "swap_ts": 1723000221.8929098
