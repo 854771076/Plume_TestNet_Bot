@@ -21948,3 +21948,14 @@ index	name      	points  	NFT                           	balance
 2024-08-19T15:37:48.876832+0800 WARNING wallets\wallet_test-swap失败，等待重试-wallets\wallet_test交换失败-ERROR：Error in running contract function: {'code': -32000, 'message': 'nonce too low: address 0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D, tx: 39 state: 40'}
 2024-08-19T15:40:46.159045+0800 WARNING wallets\wallet_test-swap失败，等待重试-wallets\wallet_test交换失败-ERROR：Error in running contract function: HTTPSConnectionPool(host='testnet-rpc.plumenetwork.xyz', port=443): Read timed out. (read timeout=10)
 2024-08-19T15:43:44.408326+0800 WARNING wallets\wallet_test-swap失败，等待重试-wallets\wallet_test交换失败-ERROR：Error in running contract function: {'code': -32000, 'message': 'nonce too low: address 0x6E5C3CB23F5801Bb61A25c9d4Bc5BeB1C55D5b9D, tx: 41 state: 42'}
+2024-08-20T20:32:49.676045+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-20T20:32:52.931769+0800 SUCCESS 初始化钱包成功-钱包数量：1
+2024-08-20T20:32:58.912381+0800 SUCCESS 钱包信息已更新 ./wallets\wallet_test.json
+2024-08-20T20:32:58.913389+0800 SUCCESS wallets\wallet_test-登录成功
+2024-08-20T20:32:58.913389+0800 SUCCESS wallets\wallet_test初始化成功
+2024-08-20T20:33:02.143295+0800 SUCCESS 
+index	name      	points  	NFT                           	balance                                                                         
+0  	wallet_test	100000  	{}                            	{'ETH': 0.00423, 'gnUSD': 1948.1021, 'sgnUSD': 252.76314, 'GOON': 1.8}          
+
+2024-08-20T20:34:55.656795+0800 SUCCESS 初始化智能合约成功：dict_keys(['checkin', 'faucet', 'gnUSD', 'GOON', 'Kuma-AICK', 'Kuma-SWAP', 'Kuma', 'sgnUSD', 'stake', 'swap'])
+2024-08-20T20:34:59.148451+0800 SUCCESS 初始化钱包成功-钱包数量：1

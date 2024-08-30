@@ -3,16 +3,16 @@
     "private_key": "0xa9e43dcddb7836e2f869219cfc85b064a024bb3c0af6247e6696d5779a720e27",
     "name": "wallets\\wallet_test",
     "balance": {
-        "ETH": 0.00444,
-        "gnUSD": 1498.52045,
-        "sgnUSD": 202.49805,
-        "GOON": 2.3
+        "ETH": 0.00423,
+        "gnUSD": 1948.1021,
+        "sgnUSD": 252.76314,
+        "GOON": 1.8
     },
     "NFTs": {},
     "init": true,
     "filename": "./wallets\\wallet_test.json",
     "init_approve": true,
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTI1NTUsImV4cCI6MTcyNjY0NDU1NSwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiOTI1ZTg5OGUtNDhmZi00OTI4LTlhM2EtMWExMTIwMTE5OWY5In0.xzhh0MPBaSCZVm8jOgklH56jBrenWoagMH9wl5R_4SE",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQxNTcxNzgsImV4cCI6MTcyNjc0OTE3OCwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiOGE4Y2ZiMDMtNjRmZS00YTgyLWFiMTMtZTFhODc2ODNlZmJiIn0.gcd0MOHULzTftKKCi_M0iA_2R7WpSP1ryVVq_qzr3BU",
     "user": {
         "id": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
         "walletAddress": "0x6e5c3cb23f5801bb61a25c9d4bc5beb1c55d5b9d",
@@ -35,9 +35,9 @@
         "twitterId": null,
         "twitterOauthAccessToken": null,
         "createdAt": "2024-08-07T02:50:31.205Z",
-        "updatedAt": "2024-08-19T02:36:22.834Z",
+        "updatedAt": "2024-08-19T07:46:03.877Z",
         "referrerId": "0d2d86e6-81e0-47aa-ac8f-bb0484babffe",
-        "totalPoints": "95000",
+        "totalPoints": "100000",
         "referrals": {
             "points": "0",
             "count": "0"
@@ -58,7 +58,7 @@
                 "completedAt": "2024-08-07T03:07:02.789Z",
                 "pointsEarned": "20000",
                 "createdAt": "2024-08-07T03:07:02.789Z",
-                "updatedAt": "2024-08-19T02:36:22.857Z",
+                "updatedAt": "2024-08-19T07:46:03.904Z",
                 "name": "Swap on Ambient"
             },
             {
@@ -67,16 +67,16 @@
                 "completedAt": "2024-08-07T02:51:49.781Z",
                 "pointsEarned": "30000",
                 "createdAt": "2024-08-07T02:51:49.781Z",
-                "updatedAt": "2024-08-19T02:36:22.857Z",
+                "updatedAt": "2024-08-19T07:46:03.904Z",
                 "name": "Drip from Faucet"
             },
             {
                 "userId": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
                 "campaignId": "ee9068e1-dbf7-4f69-b5f5-b2e6cb64001a",
                 "completedAt": "2024-08-07T03:10:50.053Z",
-                "pointsEarned": "10000",
+                "pointsEarned": "15000",
                 "createdAt": "2024-08-07T03:10:50.053Z",
-                "updatedAt": "2024-08-19T02:36:22.857Z",
+                "updatedAt": "2024-08-19T07:46:03.904Z",
                 "name": "Stake on Nest"
             }
         ],
@@ -151,14 +151,14 @@
         "ethSignContractId": "ES-V-JE6UTYZebW9lBVMRU-meD"
     },
     "authentication": {
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQwNTI1NTUsImV4cCI6MTcyNjY0NDU1NSwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiOTI1ZTg5OGUtNDhmZi00OTI4LTlhM2EtMWExMTIwMTE5OWY5In0.xzhh0MPBaSCZVm8jOgklH56jBrenWoagMH9wl5R_4SE",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3MjQxNTcxNzgsImV4cCI6MTcyNjc0OTE3OCwiYXVkIjoiaHR0cHM6Ly9taWxlcy5wbHVtZW5ldHdvcmsueHl6IiwiaXNzIjoicGx1bWVuZXR3b3JrIiwic3ViIjoiYjhjZjZhOGUtZTQ5Mi00M2U4LWFmMWYtMWIxOWQ0NTViZDE3IiwianRpIjoiOGE4Y2ZiMDMtNjRmZS00YTgyLWFiMTMtZTFhODc2ODNlZmJiIn0.gcd0MOHULzTftKKCi_M0iA_2R7WpSP1ryVVq_qzr3BU",
         "payload": {
-            "iat": 1724052555,
-            "exp": 1726644555,
+            "iat": 1724157178,
+            "exp": 1726749178,
             "aud": "https://miles.plumenetwork.xyz",
             "iss": "plumenetwork",
             "sub": "b8cf6a8e-e492-43e8-af1f-1b19d455bd17",
-            "jti": "925e898e-48ff-4928-9a3a-1a11201199f9"
+            "jti": "8a8cfb03-64fe-4a82-ab13-e1a87683efbb"
         }
     },
     "swap_ts": 1723000221.8929098

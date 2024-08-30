@@ -14,6 +14,12 @@ import threading
 from functools import *
 from web3.providers.rpc import HTTPProvider
 ua=UserAgent()
+
+#注册https://2captcha.com/enterpage获得tooken
+twocaptcha_apikey='xxx'
+#抓包全局搜索sitekey可找到
+sitekey='0x4AAAAAAAhtXHMv3RZpIEc7'
+
 class CustomHTTPProvider(HTTPProvider):
 
     def get_request_headers(self):
@@ -65,6 +71,25 @@ def ckeck_one_day(func):
             return pass_func(name)
     return wrapper
 
+
+def get_2captcha_turnstile_token(sitekey,pageurl):
+        params = {'key': twocaptcha_apikey, 'method': 'turnstile',
+                  'sitekey': sitekey,
+                  'pageurl': pageurl,
+                  'json': 1}
+        response = requests.get(f'https://2captcha.com/in.php?', params=params).json()
+        if response['status'] != 1:
+            raise ValueError(response)
+        task_id = response['request']
+        for _ in range(60):
+            response = requests.get(
+                f'https://2captcha.com/res.php?key={twocaptcha_apikey}&action=get&id={task_id}&json=1').json()
+            if response['status'] == 1:
+                return response['request']
+            else:
+                time.sleep(3)
+        return False
+
 class Plume_TestNet_Bot:
     headers = {
             'Accept': 'application/json',
@@ -84,6 +109,8 @@ class Plume_TestNet_Bot:
             'sec-ch-ua-platform': '"Windows"',
         }
     _lock=threading.Lock()
+
+    
     def __init__(self,invited='RRU30',proxy=False,init=True,show_point=True,wallet_path='./wallets',contract_path='./contract',proxy_api='http://zltiqu.pyhttp.taolop.com/getip?count=10&neek=42670&type=2&yys=0&port=2&sb=&mr=1&sep=0&ts=1',rpc_url = 'https://testnet-rpc.plumenetwork.xyz/http'):
         '''
         invited 邀请码
@@ -283,12 +310,13 @@ class Plume_TestNet_Bot:
         '''
         with self._lock:
             if not self.ip_pool:
-                self.ip_pool=requests.get(f"{self.proxy_api}").json().get('data',[{}])
+                # self.ip_pool=requests.get(f"{self.proxy_api}").json().get('data',[{}])
+                self.ip_pool=requests.get(f"{self.proxy_api}").text.split('\n')
             try:
                 data=self.ip_pool.pop()
             except:
                 logger.error('本地ip，未有代理服务白名单，请更换代理或者开通白名单')
-            proxy={'proxy':f'{data["ip"]}:{data["port"]}'}
+            proxy={'proxy':f'{data}'}
             return proxy
     # def delete_proxy(self,proxy):
     #     requests.get(f"{self.proxy_api}/delete/?proxy={proxy}")
@@ -358,6 +386,7 @@ class Plume_TestNet_Bot:
         json_data = {
         'walletAddress': address,
         'token': token,
+        'verified':get_2captcha_turnstile_token(sitekey,'https://faucet.plumenetwork.xyz/')
         }
         data={}
         while True:
@@ -570,6 +599,7 @@ class Plume_TestNet_Bot:
             logger.success(f'{name}-质押成功-Transaction-交易哈希: {tx_hash.hex()}-交易状态: {receipt.status}')
         except Exception as e:
             raise ValueError(f'{name}-质押失败-ERROR：{e}')
+    
     def check_Kuma(self,wallet):
         '''
         检查是否有Kuma NFT
