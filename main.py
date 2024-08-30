@@ -18,7 +18,7 @@ ua=UserAgent()
 #注册https://2captcha.com/enterpage获得tooken
 twocaptcha_apikey='xxx'
 #抓包全局搜索sitekey可找到
-sitekey='0x4AAAAAAAhtXHMv3RZpIEc7'
+sitekey='0x4AAAAAAAViEapSHoQXHmzu'
 
 class CustomHTTPProvider(HTTPProvider):
 
@@ -218,7 +218,7 @@ class Plume_TestNet_Bot:
         加载钱包
         '''
         # 从 JSON 文件中读取钱包信息
-        with open(filename, 'r') as file:
+        with open(filename, 'r',encoding='gbk') as file:
             wallet_info = json.load(file)
         wallet_name=filename.split('/')[-1].replace('.json','')
         wallet_info['name']=wallet_name
@@ -386,7 +386,7 @@ class Plume_TestNet_Bot:
         json_data = {
         'walletAddress': address,
         'token': token,
-        'verified':get_2captcha_turnstile_token(sitekey,'https://faucet.plumenetwork.xyz/')
+        'verified':get_2captcha_turnstile_token(sitekey,'https://faucet.plumenetwork.xyz')
         }
         data={}
         while True:
@@ -737,5 +737,6 @@ if __name__=='__main__':
     # bot.mint_Kuma(wallet=bot.wallets[0])
     # bot.swap_Kuma(wallet=bot.wallets[0])
     # bot.create_wallets(1)
-    bot.do_daily_tasks(max_workers=1)
+    
+    bot.get_faucet(bot.wallets[0])
     # bot.swap(bot.wallets[0])
